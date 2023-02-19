@@ -1,0 +1,323 @@
+{
+    "id": 7202,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 12, zadatak 4",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1030,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "build_up();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void build_up()\n{\n    FILE* izlaz;\n\n    int indexi[] = {12345, 12345, 12233, 13579, 13579, 13337, 13337, 13337, 13337, 13337, 12345, 13579, 17773, 17773};\n    int predmeti[] = {3, 4, 4, 2, 3, 1, 2, 3, 4, 5, 5, 2, 1, 2};\n    int ocjene[] = {10, 9, 10, 8, 8, 5, 6, 7, 7, 9, 10, 6, 8, 5};\n    int n = sizeof(indexi) \/ sizeof(int), i;\n\n    izlaz = fopen(\"ispiti.txt\", \"w\");\n\n    for (i = 0; i < n; i++)\n    {\n        fprintf(izlaz, \"%d %d %d\\n\", indexi[i], predmeti[i], ocjene[i]);\n    }\n\n    fclose(izlaz);\n\n    izlaz = fopen(\"predmeti.txt\", \"w\");\n\n    fprintf(izlaz, \"1 Inzinjerska matematika I\\n\");\n    fprintf(izlaz, \"2 Inzinjerska fizika I\\n\");\n    fprintf(izlaz, \"3 Linearna algebra i geometrija\\n\");\n    fprintf(izlaz, \"4 Osnove racunarstva\\n\");\n    fprintf(izlaz, \"5 Osnove elektrotehnike\\n\");\n\n    fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Inzinjerska matematika I\n"
+                },
+                "expect": [
+                    "Unesite predmet: Prosjecna ocjena: 6.50\nProlaznost: 50%\n"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "Inzinjerska matematika I\n"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "Inzinjerska matematika I\n"
+                },
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 1031,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "build_up();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void build_up()\n{\n    FILE* izlaz;\n\n    int indexi[] = {12345, 12345, 12233, 13579, 13579, 13337, 13337, 13337, 13337, 13337, 12345, 13579, 17773, 17773};\n    int predmeti[] = {3, 4, 4, 2, 3, 1, 2, 3, 4, 5, 5, 2, 1, 2};\n    int ocjene[] = {10, 9, 10, 8, 8, 5, 6, 7, 7, 9, 10, 6, 8, 5};\n    int n = sizeof(indexi) \/ sizeof(int), i;\n\n    izlaz = fopen(\"ispiti.txt\", \"w\");\n\n    for (i = 0; i < n; i++)\n    {\n        fprintf(izlaz, \"%d %d %d\\n\", indexi[i], predmeti[i], ocjene[i]);\n    }\n\n    fclose(izlaz);\n\n    izlaz = fopen(\"predmeti.txt\", \"w\");\n\n    fprintf(izlaz, \"1 Inzinjerska matematika I\\n\");\n    fprintf(izlaz, \"2 Inzinjerska fizika I\\n\");\n    fprintf(izlaz, \"3 Linearna algebra i geometrija\\n\");\n    fprintf(izlaz, \"4 Osnove racunarstva\\n\");\n    fprintf(izlaz, \"5 Osnove elektrotehnike\\n\");\n\n    fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Inzinjerska fizika I\n"
+                },
+                "expect": [
+                    "Unesite predmet: Prosjecna ocjena: 6.25\nProlaznost: 75%\n"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "Inzinjerska fizika I\n"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "Inzinjerska fizika I\n"
+                },
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 1032,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "build_up();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void build_up()\n{\n    FILE* izlaz;\n\n    int indexi[] = {12345, 12345, 12233, 13579, 13579, 13337, 13337, 13337, 13337, 13337, 12345, 13579, 17773, 17773};\n    int predmeti[] = {3, 4, 4, 2, 3, 1, 2, 3, 4, 5, 5, 2, 1, 2};\n    int ocjene[] = {10, 9, 10, 8, 8, 5, 6, 7, 7, 9, 10, 6, 8, 5};\n    int n = sizeof(indexi) \/ sizeof(int), i;\n\n    izlaz = fopen(\"ispiti.txt\", \"w\");\n\n    for (i = 0; i < n; i++)\n    {\n        fprintf(izlaz, \"%d %d %d\\n\", indexi[i], predmeti[i], ocjene[i]);\n    }\n\n    fclose(izlaz);\n\n    izlaz = fopen(\"predmeti.txt\", \"w\");\n\n    fprintf(izlaz, \"1 Inzinjerska matematika I\\n\");\n    fprintf(izlaz, \"2 Inzinjerska fizika I\\n\");\n    fprintf(izlaz, \"3 Linearna algebra i geometrija\\n\");\n    fprintf(izlaz, \"4 Osnove racunarstva\\n\");\n    fprintf(izlaz, \"5 Osnove elektrotehnike\\n\");\n\n    fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Linearna algebra i geometrija\n"
+                },
+                "expect": [
+                    "Unesite predmet: Prosjecna ocjena: 8.33\nProlaznost: 100%\n"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "Linearna algebra i geometrija\n"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "Linearna algebra i geometrija\n"
+                },
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 1033,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "build_up();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void build_up()\n{\n    FILE* izlaz;\n\n    int indexi[] = {12345, 12345, 12233, 13579, 13579, 13337, 13337, 13337, 13337, 13337, 12345, 13579, 17773, 17773};\n    int predmeti[] = {3, 4, 4, 2, 3, 1, 2, 3, 4, 5, 5, 2, 1, 2};\n    int ocjene[] = {10, 9, 10, 8, 8, 5, 6, 7, 7, 9, 10, 6, 8, 5};\n    int n = sizeof(indexi) \/ sizeof(int), i;\n\n    izlaz = fopen(\"ispiti.txt\", \"w\");\n\n    for (i = 0; i < n; i++)\n    {\n        fprintf(izlaz, \"%d %d %d\\n\", indexi[i], predmeti[i], ocjene[i]);\n    }\n\n    fclose(izlaz);\n\n    izlaz = fopen(\"predmeti.txt\", \"w\");\n\n    fprintf(izlaz, \"1 Inzinjerska matematika I\\n\");\n    fprintf(izlaz, \"2 Inzinjerska fizika I\\n\");\n    fprintf(izlaz, \"3 Linearna algebra i geometrija\\n\");\n    fprintf(izlaz, \"4 Osnove racunarstva\\n\");\n    fprintf(izlaz, \"5 Osnove elektrotehnike\\n\");\n\n    fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Osnove racunarstva\n"
+                },
+                "expect": [
+                    "Unesite predmet: Prosjecna ocjena: 8.67\nProlaznost: 100%\n"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "Osnove racunarstva\n"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "Osnove racunarstva\n"
+                },
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 1034,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "build_up();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void build_up()\n{\n    FILE* izlaz;\n\n    int indexi[] = {12345, 12345, 12233, 13579, 13579, 13337, 13337, 13337, 13337, 13337, 12345, 13579, 17773, 17773};\n    int predmeti[] = {3, 4, 4, 2, 3, 1, 2, 3, 4, 5, 5, 2, 1, 2};\n    int ocjene[] = {10, 9, 10, 8, 8, 5, 6, 7, 7, 9, 10, 6, 8, 5};\n    int n = sizeof(indexi) \/ sizeof(int), i;\n\n    izlaz = fopen(\"ispiti.txt\", \"w\");\n\n    for (i = 0; i < n; i++)\n    {\n        fprintf(izlaz, \"%d %d %d\\n\", indexi[i], predmeti[i], ocjene[i]);\n    }\n\n    fclose(izlaz);\n\n    izlaz = fopen(\"predmeti.txt\", \"w\");\n\n    fprintf(izlaz, \"1 Inzinjerska matematika I\\n\");\n    fprintf(izlaz, \"2 Inzinjerska fizika I\\n\");\n    fprintf(izlaz, \"3 Linearna algebra i geometrija\\n\");\n    fprintf(izlaz, \"4 Osnove racunarstva\\n\");\n    fprintf(izlaz, \"5 Osnove elektrotehnike\\n\");\n\n    fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Osnove elektrotehnike\n"
+                },
+                "expect": [
+                    "Unesite predmet: Prosjecna ocjena: 9.50\nProlaznost: 100%\n"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "Osnove elektrotehnike\n"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "Osnove elektrotehnike\n"
+                },
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 1035,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "build_up();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void build_up()\n{\n    FILE* izlaz;\n\n    int indexi[] = {12345, 12345, 12233, 13579, 13579, 13337, 13337, 13337, 13337, 13337, 12345, 13579, 17773, 17773};\n    int predmeti[] = {3, 4, 4, 2, 3, 1, 2, 3, 4, 5, 5, 2, 1, 2};\n    int ocjene[] = {10, 9, 10, 8, 8, 5, 6, 7, 7, 9, 10, 6, 8, 5};\n    int n = sizeof(indexi) \/ sizeof(int), i;\n\n    izlaz = fopen(\"ispiti.txt\", \"w\");\n\n    for (i = 0; i < n; i++)\n    {\n        fprintf(izlaz, \"%d %d %d\\n\", indexi[i], predmeti[i], ocjene[i]);\n    }\n\n    fclose(izlaz);\n\n    izlaz = fopen(\"predmeti.txt\", \"w\");\n\n    fprintf(izlaz, \"1 Inzinjerska matematika I\\n\");\n    fprintf(izlaz, \"2 Inzinjerska fizika I\\n\");\n    fprintf(izlaz, \"3 Linearna algebra i geometrija\\n\");\n    fprintf(izlaz, \"4 Osnove racunarstva\\n\");\n    fprintf(izlaz, \"5 Osnove elektrotehnike\\n\");\n\n    fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Osnove matematike\nOsnove racunarstva\n"
+                },
+                "expect": [
+                    "Unesite predmet: Nepostojeci predmet!\nUnesite predmet: Prosjecna ocjena: 8.67\nProlaznost: 100%\n"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "Osnove matematike\nOsnove racunarstva\n"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "Osnove matematike\nOsnove racunarstva\n"
+                },
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 1036,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "build_up();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void build_up()\n{\n    FILE* izlaz;\n\n    int indexi[] = {12345, 12345, 12233, 13579, 13579, 13337, 13337, 13337, 13337, 13337, 12345, 13579, 17773, 17773};\n    int predmeti[] = {3, 4, 4, 2, 3, 1, 2, 3, 4, 5, 5, 2, 1, 2};\n    int ocjene[] = {10, 9, 10, 8, 8, 5, 6, 7, 7, 9, 10, 6, 8, 5};\n    int n = sizeof(indexi) \/ sizeof(int), i;\n\n    izlaz = fopen(\"ispiti.txt\", \"w\");\n\n    for (i = 0; i < n; i++)\n    {\n        fprintf(izlaz, \"%d %d %d\\n\", indexi[i], predmeti[i], ocjene[i]);\n    }\n\n    fclose(izlaz);\n\n    izlaz = fopen(\"predmeti.txt\", \"w\");\n\n    fprintf(izlaz, \"1 Inzinjerska matematika I\\n\");\n    fprintf(izlaz, \"2 Inzinjerska fizika I\\n\");\n    fprintf(izlaz, \"3 Linearna algebra i geometrija\\n\");\n    fprintf(izlaz, \"4 Osnove racunarstva\\n\");\n    fprintf(izlaz, \"5 Osnove elektrotehnike\\n\");\n    fprintf(izlaz, \"6 Tehnike programiranja\\n\");\n\n    fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Tehnike programiranja\n"
+                },
+                "expect": [
+                    "Unesite predmet: Zalimo, ali ne postoje podaci o predmetu Tehnike programiranja!\n"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "Tehnike programiranja\n"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "Tehnike programiranja\n"
+                },
+                "matching": "whitespace"
+            }
+        }
+    ]
+}

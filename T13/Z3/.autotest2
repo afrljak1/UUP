@@ -1,0 +1,147 @@
+{
+    "id": 7209,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 13, zadatak 3",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 2057,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/* AT1: Test rada programa - bez datoteke *\/\n_main();\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\nMeho\nMehic\n10\n8\n2\n0"
+                },
+                "expect": [
+                    "Unesite 1 za unos, 2 za ispis, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 0 za izlaz: \n1. Meho Mehic - 10, 8\nUnesite 1 za unos, 2 za ispis, 0 za izlaz:"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\nMeho\nMehic\n10\n8\n2\n0"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\nMeho\nMehic\n10\n8\n2\n0"
+                }
+            }
+        },
+        {
+            "id": 2058,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/* AT2: Da li se generise datoteka? *\/\nremove(\"ispit.txt\");\n_main();\nprintf(\"\\nispit.txt:\\n\");\nFILE* dat = fopen(\"ispit.txt\", \"r\");\nif (dat == NULL) {\n    printf(\"Datoteka ne postoji!\");\n    return 0;\n}\nint c;\ndo {\n   c = fgetc(dat);\n   if (c != EOF) printf(\"%c\", c);\n} while (c != EOF);\nfclose(dat);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\nMeho\nMehic\n10\n8\n0"
+                },
+                "expect": [
+                    "Unesite 1 za unos, 2 za ispis, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 0 za izlaz: \nispit.txt:\nMehic               Meho           10  8"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\nMeho\nMehic\n10\n8\n0"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\nMeho\nMehic\n10\n8\n0"
+                }
+            }
+        },
+        {
+            "id": 2059,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/* AT3: Provjera dodavanja u postojecu datoteku *\/\nremove(\"ispit.txt\");\n_main();\nprintf(\"\\n\");\n_main();\nprintf(\"\\nispit.txt:\\n\");\nFILE* dat = fopen(\"ispit.txt\", \"r\");\nif (dat == NULL) {\n    printf(\"Datoteka ne postoji!\");\n    return 0;\n}\nint c;\ndo {\n   c = fgetc(dat);\n   if (c != EOF) printf(\"%c\", c);\n} while (c != EOF);\nfclose(dat);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\nHana\nHanic\n15\n14\n0\n1\nDada\nDadic\n18\n18\n0\n"
+                },
+                "expect": [
+                    "Unesite 1 za unos, 2 za ispis, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 0 za izlaz: \nUnesite 1 za unos, 2 za ispis, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 0 za izlaz:\nispit.txt:\nHanic               Hana           15 14\nDadic               Dada           18 18"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\nHana\nHanic\n15\n14\n0\n1\nDada\nDadic\n18\n18\n0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\nHana\nHanic\n15\n14\n0\n1\nDada\nDadic\n18\n18\n0\n"
+                }
+            }
+        }
+    ]
+}

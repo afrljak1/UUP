@@ -1,0 +1,133 @@
+{
+    "id": 4116,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 3, zadatak 3",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1170,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "20"
+                },
+                "expect": [
+                    "Unesite broj n: 20\n15\n14\n11\n10\n7\n5\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "20"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "20"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1172,
+            "execute": {
+                "environment": {
+                    "stdin": "3"
+                },
+                "expect": [
+                    "Unesite broj n:"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "3"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "3"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1173,
+            "execute": {
+                "environment": {
+                    "stdin": "50"
+                },
+                "expect": [
+                    "Unesite broj n: 50\n49\n45\n44\n42\n40\n35\n33\n30\n28\n25\n22\n21\n20\n15\n14\n11\n10\n7\n5\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "50"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "50"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

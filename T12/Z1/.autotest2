@@ -1,0 +1,143 @@
+{
+    "id": 5572,
+    "name": "Osnove ra\u010dunarstva (2018\/2019), Tutorijal 12, zadatak 1",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "tes.txt\n"
+                },
+                "expect": [
+                    "Unesite ime datoteke: Pogreska kod otvaranja datoteke tes.txt!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "tes.txt\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "tes.txt\n"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 2,
+            "execute": {
+                "environment": {
+                    "stdin": "test"
+                },
+                "expect": [
+                    "Unesite ime datoteke: Pogreska kod otvaranja datoteke test!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "test"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "test"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 3,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "test();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void test(){\n   FILE* izlaz;\n   izlaz=fopen(\"test.txt\",\"w\");\n   fprintf(izlaz,\"Kako spremiti pet ispita\\n za pet dana?\");\n   fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "test.txt"
+                },
+                "expect": [
+                    "Unesite ime datoteke: Broj redova: 2\nBroj rijeci: 7\nBroj znakova: 31"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "test.txt"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "test.txt"
+                }
+            }
+        }
+    ]
+}

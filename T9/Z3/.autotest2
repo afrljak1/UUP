@@ -1,0 +1,155 @@
+{
+    "id": 7164,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), ZSR10, zadatak 3",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1316,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char rijec[] = \" Danas je divan Dan u sarajevu!\";\nprintf (\"'%s'\", kapitaliziraj(rijec)); ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "' Danas Je Divan Dan U Sarajevu!'"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1317,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char s[] = \"treba nekada krenuti i od Prvog slova\";\nprintf (\"%s\", kapitaliziraj(s)); ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Treba Nekada Krenuti I Od Prvog Slova"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1318,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char s[] = \"  0Rijeci 1koje 3Pocinju   -znakovima x  \";\nprintf (\"'%s'\", kapitaliziraj(s)); ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'  0Rijeci 1koje 3Pocinju   -znakovima X  '"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1319,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char s[] = \"\";\nchar s2[] = \"  \";\nchar s3[] = \"...\";\nprintf (\"'%s'\", kapitaliziraj(s)); \nprintf (\"'%s'\", kapitaliziraj(s2)); \nprintf (\"'%s'\", kapitaliziraj(s3)); ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'''  ''...'"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1320,
+            "execute": {
+                "environment": {
+                    "stdin": " Sada cu Unijeti 1primjer teksta. . .\n"
+                },
+                "expect": [
+                    "Unesite neki tekst:  Sada Cu Unijeti 1primjer Teksta. . .\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": " Sada cu Unijeti 1primjer teksta. . .\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": " Sada cu Unijeti 1primjer teksta. . .\n"
+                }
+            }
+        }
+    ]
+}

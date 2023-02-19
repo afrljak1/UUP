@@ -1,0 +1,208 @@
+{
+    "id": 4017,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 2, zadatak 3",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 4018,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "18 2"
+                },
+                "expect": [
+                    "Dan: Mjesec: Vas znak je Vodolija!\n"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4019,
+            "execute": {
+                "environment": {
+                    "stdin": "19 2"
+                },
+                "expect": [
+                    "Dan: Mjesec: Vas znak je Ribe!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4020,
+            "execute": {
+                "environment": {
+                    "stdin": "21 5"
+                },
+                "expect": [
+                    "Dan: Mjesec: Vas znak je Blizanci!\n"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4021,
+            "execute": {
+                "environment": {
+                    "stdin": "22 8"
+                },
+                "expect": [
+                    "Dan: Mjesec: Vas znak je Lav!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4022,
+            "execute": {
+                "environment": {
+                    "stdin": "23 8"
+                },
+                "expect": [
+                    "Dan: Mjesec: Vas znak je Djevica!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4023,
+            "execute": {
+                "environment": {
+                    "stdin": "22 11"
+                },
+                "expect": [
+                    "Dan: Mjesec: Vas znak je Strijelac!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4024,
+            "execute": {
+                "environment": {
+                    "stdin": "22 12"
+                },
+                "expect": [
+                    "Dan: Mjesec: Vas znak je Jarac!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4025,
+            "execute": {
+                "environment": {
+                    "stdin": "21 12"
+                },
+                "expect": [
+                    "Dan: Mjesec: Vas znak je Strijelac!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4026,
+            "execute": {
+                "environment": {
+                    "stdin": "19 1"
+                },
+                "expect": [
+                    "Dan: Mjesec: Vas znak je Jarac!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4027,
+            "execute": {
+                "environment": {
+                    "stdin": "20 1"
+                },
+                "expect": [
+                    "Dan: Mjesec: Vas znak je Vodolija!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

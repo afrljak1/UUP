@@ -1,0 +1,83 @@
+{
+    "id": 881,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorial 4, zadatak 6",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 882,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "-1"
+                },
+                "expect": [
+                    "Izabrao sam broj. Probaj ga pogoditi (-1 za izlaz).\n\nUnesite broj: Kraj igre."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "-1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "-1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

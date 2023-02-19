@@ -1,0 +1,185 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c03",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23)",
+        "compile[debug]": "gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23)",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "4094": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: nije normalan\nPuls: normalan\n",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4095": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: normalan\nPuls: normalan\n",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4096": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: normalan\nPuls: normalan\n",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4097": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: normalan\nPuls: normalan\n",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4098": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: nije normalan\nDP: nije normalan\nPuls: nije normalan\n",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4099": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: nije normalan\nDP: normalan\nPuls: nije normalan\n",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4100": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: nije normalan\nPuls: nije normalan\n",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4101": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: normalan\nPuls: nije normalan\n",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4102": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: nije normalan\nDP: nije normalan\nPuls: normalan\n",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4103": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: nije normalan\nDP: normalan\nPuls: nije normalan\n",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        }
+    },
+    "time": 1634724217
+}

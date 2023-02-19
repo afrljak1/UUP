@@ -1,0 +1,152 @@
+{
+    "id": 7007,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 7, zadatak 1",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 715,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "crtaj (7);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "*******"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 716,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf (\"-\\n\");\ncrtaj (0);\nprintf (\"-\");",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "-\n-"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 717,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "int niz[] = {10, 1, 1, 7, 1, 1, 10}, i;\nfor (i = 0; i < sizeof (niz) \/ sizeof(int); ++i)\n\tcrtaj (niz[i]), printf (\"\\n\");",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "**********\n*\n*\n*******\n*\n*\n**********"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 718,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf (\"-\");\ncrtaj (1);\nprintf (\"-\"); ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "-*-"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 719,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf (\"-\");\ncrtaj (-1);\nprintf (\"-\"); ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "--"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

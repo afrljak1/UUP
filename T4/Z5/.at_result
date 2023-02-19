@@ -1,0 +1,44 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c01",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23)",
+        "compile[debug]": "gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23)",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "1": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "compile": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.c: In function ‘main’:\nmain.c:37: error: expected ‘while’ at end of input\nmain.c:37: error: expected declaration or statement at end of input",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "main.c",
+                            "line": "37",
+                            "message": "expected 'while' at end of input"
+                        },
+                        {
+                            "type": "error",
+                            "file": "main.c",
+                            "line": "37",
+                            "message": "expected declaration or statement at end of input"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "time": 1636041804
+}

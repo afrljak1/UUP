@@ -1,0 +1,181 @@
+{
+    "id": 7017,
+    "name": "Osnove ra\u010dunarstva (2015\/2016), Tutorial 8, zadatak 2",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 746,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10 11 14 18 20 16 12 11"
+                },
+                "expect": [
+                    "Unesite temperature: Maksimalna temperatura: 20.0\nProsjecna temperatura: 14.0"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "10 11 14 18 20 16 12 11"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "10 11 14 18 20 16 12 11"
+                },
+                "matching": "whitespace"
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 747,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "float niz[8] = { 1.23, 3.12, 0.0, -5.3, 10.7, 9, 8.9, 8 };\nfloat temp = maxtemp(niz);\nprintf(\"%.2f\", temp);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "10.70"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 748,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "float niz[8] = { 1.23, 3.12, 0.0, -5.3, 10.7, 9, 8.9, 8 };\nfloat prosjek = prtemp(niz);\nprintf(\"%.2f\", prosjek);\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "4.46"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 749,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "float niz[8] = { 0, 0, 0.0, 0, 0, 0, 0 };\nfloat prosjek = prtemp(niz);\nprintf(\"%.2f\", prosjek);\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0.00"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 1584,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "8.9 8.9 8.9 8.9 11.1 11.1 11.1 11.1"
+                },
+                "expect": [
+                    "Unesite temperature: Maksimalna temperatura: 11.1\nProsjecna temperatura: 10.0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "8.9 8.9 8.9 8.9 11.1 11.1 11.1 11.1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "8.9 8.9 8.9 8.9 11.1 11.1 11.1 11.1"
+                }
+            }
+        }
+    ]
+}

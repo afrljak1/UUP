@@ -1,0 +1,133 @@
+{
+    "id": 5796,
+    "name": "Osnove ra\u010dunarstva (2020\/2021), Tutorijal 1, Zadatak 5",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "58.56\n0.3\n175.68\n0.2"
+                },
+                "expect": [
+                    "Unesite potrosnju VT: Unesite cijenu VT: Unesite potrosnju MT: Unesite cijenu MT: Ukupna potrosnja je 234.24 kWh.\nUdio velike tarife u ukupnoj potrosnji je 25%.\nUdio male tarife u ukupnoj potrosnji je 75%.\nIznos racuna je 52.70 KM."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "58.56\n0.3\n175.68\n0.2"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "58.56\n0.3\n175.68\n0.2"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 2,
+            "execute": {
+                "environment": {
+                    "stdin": "1\n1\n1\n1"
+                },
+                "expect": [
+                    "Unesite potrosnju VT: Unesite cijenu VT: Unesite potrosnju MT: Unesite cijenu MT: Ukupna potrosnja je 2.00 kWh.\nUdio velike tarife u ukupnoj potrosnji je 50%.\nUdio male tarife u ukupnoj potrosnji je 50%.\nIznos racuna je 2.00 KM."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\n1\n1\n1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\n1\n1\n1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 3,
+            "execute": {
+                "environment": {
+                    "stdin": "0\n15\n1\n20"
+                },
+                "expect": [
+                    "Unesite potrosnju VT: Unesite cijenu VT: Unesite potrosnju MT: Unesite cijenu MT: Ukupna potrosnja je 1.00 kWh.\nUdio velike tarife u ukupnoj potrosnji je 0%.\nUdio male tarife u ukupnoj potrosnji je 100%.\nIznos racuna je 20.00 KM."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "0\n15\n1\n20"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "0\n15\n1\n20"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,226 @@
+{
+    "buildhost_description": {
+        "id": "localhost",
+        "os": "Linux 4.15.0-171-generic x86_64\nUbuntu 18.04.6 LTS\n"
+    },
+    "tools": {
+        "compile": "7.5.0",
+        "compile[debug]": "7.5.0",
+        "debug": "8.1.1",
+        "profile[memcheck]": "valgrind-3.13.0",
+        "profile[sgcheck]": "valgrind-3.13.0"
+    },
+    "status": 4,
+    "test_results": {
+        "746": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite temperature: Maksimalna temperatura: 20.0\nProsjecna temperatura: 14.0",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==24951== Memcheck, a memory error detector\n==24951== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==24951== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==24951== Command: outputrhsqYk\n==24951==\nUnesite temperature: Maksimalna temperatura: 20.0\nProsjecna temperatura: 14.0==24951==\n==24951== HEAP SUMMARY:\n==24951==     in use at exit: 0 bytes in 0 blocks\n==24951==   total heap usage: 2 allocs, 2 frees, 8,192 bytes allocated\n==24951==\n==24951== All heap blocks were freed -- no leaks are possible\n==24951==\n==24951== For counts of detected and suppressed errors, rerun with: -v\n==24951== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==24962== exp-sgcheck, a stack and global array overrun detector\n==24962== NOTE: This is an Experimental-Class Valgrind Tool\n==24962== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==24962== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==24962== Command: outputrhsqYk\n==24962==\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--24962-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n\nexp-sgcheck: sg_main.c:559 (add_blocks_to_StackTree): Assertion '!already_present' failed.\n\nhost stacktrace:\n==24962==    at 0x5801545A: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==24962==    by 0x58015574: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==24962==    by 0x580156F9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==24962==    by 0x5800A6E9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==24962==    by 0x5800C3B0: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==24962==    by 0x10032A7DBE: ???\n==24962==    by 0x1002E8DF2F: ???\n==24962==    by 0x1C0F: ???\n==24962==    by 0x10020644FF: ???\n==24962==    by 0x1002E8DF17: ???\n==24962==    by 0x1002E8DF2F: ???\n==24962==    by 0x5841F21F: ???\n==24962==    by 0x600: ???\n==24962==    by 0x18085: ???\n\nsched status:\n  running_tid=1\n\nThread 1: status = VgTs_Runnable (lwpid 24962)\n==24962==    at 0x4006EA2: _dl_map_object_from_fd (dl-map-segments.h:94)\n==24962==    by 0x40091AB: _dl_map_object (dl-load.c:2460)\n==24962==    by 0x4001304: map_doit (rtld.c:591)\n==24962==    by 0x401BE4A: _dl_catch_exception (dl-error-skeleton.c:196)\n==24962==    by 0x401BEBE: _dl_catch_error (dl-error-skeleton.c:215)\n==24962==    by 0x4002567: handle_ld_preload (rtld.c:762)\n==24962==    by 0x4003E54: dl_main (rtld.c:1618)\n==24962==    by 0x401AF4F: _dl_sysdep_start (dl-sysdep.c:253)\n==24962==    by 0x4002127: _dl_start (rtld.c:414)\n==24962==    by 0x4001097: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)\n\n\nNote: see also the FAQ in the source distribution.\nIt contains workarounds to several common problems.\nIn particular, if Valgrind aborted or crashed after\nidentifying problems in your program, there's a good chance\nthat fixing those problems will prevent Valgrind aborting or\ncrashing, especially if it happened in m_mallocfree.c.\n\nIf that doesn't help, please report this bug to: www.valgrind.org\n\nIn the bug report, send all the above text, the valgrind\nversion, and what OS and version you are using.  Thanks.\n",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "747": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "10.70",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==24987== Memcheck, a memory error detector\n==24987== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==24987== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==24987== Command: outputTkbg6x\n==24987==\n====START_TEST_9969====10.70====END_TEST_9969======24987==\n==24987== HEAP SUMMARY:\n==24987==     in use at exit: 0 bytes in 0 blocks\n==24987==   total heap usage: 1 allocs, 1 frees, 4,096 bytes allocated\n==24987==\n==24987== All heap blocks were freed -- no leaks are possible\n==24987==\n==24987== For counts of detected and suppressed errors, rerun with: -v\n==24987== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==25006== exp-sgcheck, a stack and global array overrun detector\n==25006== NOTE: This is an Experimental-Class Valgrind Tool\n==25006== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==25006== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==25006== Command: outputTkbg6x\n==25006==\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25006-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n\nexp-sgcheck: sg_main.c:559 (add_blocks_to_StackTree): Assertion '!already_present' failed.\n\nhost stacktrace:\n==25006==    at 0x5801545A: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25006==    by 0x58015574: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25006==    by 0x580156F9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25006==    by 0x5800A6E9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25006==    by 0x5800C3B0: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25006==    by 0x10032A7DBE: ???\n==25006==    by 0x1002E8DF2F: ???\n==25006==    by 0x1C0F: ???\n==25006==    by 0x10020644FF: ???\n==25006==    by 0x1002E8DF17: ???\n==25006==    by 0x1002E8DF2F: ???\n==25006==    by 0x5841F21F: ???\n==25006==    by 0x600: ???\n==25006==    by 0x18085: ???\n\nsched status:\n  running_tid=1\n\nThread 1: status = VgTs_Runnable (lwpid 25006)\n==25006==    at 0x4006EA2: _dl_map_object_from_fd (dl-map-segments.h:94)\n==25006==    by 0x40091AB: _dl_map_object (dl-load.c:2460)\n==25006==    by 0x4001304: map_doit (rtld.c:591)\n==25006==    by 0x401BE4A: _dl_catch_exception (dl-error-skeleton.c:196)\n==25006==    by 0x401BEBE: _dl_catch_error (dl-error-skeleton.c:215)\n==25006==    by 0x4002567: handle_ld_preload (rtld.c:762)\n==25006==    by 0x4003E54: dl_main (rtld.c:1618)\n==25006==    by 0x401AF4F: _dl_sysdep_start (dl-sysdep.c:253)\n==25006==    by 0x4002127: _dl_start (rtld.c:414)\n==25006==    by 0x4001097: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)\n\n\nNote: see also the FAQ in the source distribution.\nIt contains workarounds to several common problems.\nIn particular, if Valgrind aborted or crashed after\nidentifying problems in your program, there's a good chance\nthat fixing those problems will prevent Valgrind aborting or\ncrashing, especially if it happened in m_mallocfree.c.\n\nIf that doesn't help, please report this bug to: www.valgrind.org\n\nIn the bug report, send all the above text, the valgrind\nversion, and what OS and version you are using.  Thanks.\n",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "748": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "4.46",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==25030== Memcheck, a memory error detector\n==25030== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==25030== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==25030== Command: outputl1S9ZN\n==25030==\n====START_TEST_365====4.46====END_TEST_365======25030==\n==25030== HEAP SUMMARY:\n==25030==     in use at exit: 0 bytes in 0 blocks\n==25030==   total heap usage: 1 allocs, 1 frees, 4,096 bytes allocated\n==25030==\n==25030== All heap blocks were freed -- no leaks are possible\n==25030==\n==25030== For counts of detected and suppressed errors, rerun with: -v\n==25030== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==25051== exp-sgcheck, a stack and global array overrun detector\n==25051== NOTE: This is an Experimental-Class Valgrind Tool\n==25051== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==25051== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==25051== Command: outputl1S9ZN\n==25051==\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25051-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n\nexp-sgcheck: sg_main.c:559 (add_blocks_to_StackTree): Assertion '!already_present' failed.\n\nhost stacktrace:\n==25051==    at 0x5801545A: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25051==    by 0x58015574: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25051==    by 0x580156F9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25051==    by 0x5800A6E9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25051==    by 0x5800C3B0: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25051==    by 0x10032A7DBE: ???\n==25051==    by 0x1002E8DF2F: ???\n==25051==    by 0x1C0F: ???\n==25051==    by 0x10020644FF: ???\n==25051==    by 0x1002E8DF17: ???\n==25051==    by 0x1002E8DF2F: ???\n==25051==    by 0x5841F21F: ???\n==25051==    by 0x600: ???\n==25051==    by 0x18085: ???\n\nsched status:\n  running_tid=1\n\nThread 1: status = VgTs_Runnable (lwpid 25051)\n==25051==    at 0x4006EA2: _dl_map_object_from_fd (dl-map-segments.h:94)\n==25051==    by 0x40091AB: _dl_map_object (dl-load.c:2460)\n==25051==    by 0x4001304: map_doit (rtld.c:591)\n==25051==    by 0x401BE4A: _dl_catch_exception (dl-error-skeleton.c:196)\n==25051==    by 0x401BEBE: _dl_catch_error (dl-error-skeleton.c:215)\n==25051==    by 0x4002567: handle_ld_preload (rtld.c:762)\n==25051==    by 0x4003E54: dl_main (rtld.c:1618)\n==25051==    by 0x401AF4F: _dl_sysdep_start (dl-sysdep.c:253)\n==25051==    by 0x4002127: _dl_start (rtld.c:414)\n==25051==    by 0x4001097: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)\n\n\nNote: see also the FAQ in the source distribution.\nIt contains workarounds to several common problems.\nIn particular, if Valgrind aborted or crashed after\nidentifying problems in your program, there's a good chance\nthat fixing those problems will prevent Valgrind aborting or\ncrashing, especially if it happened in m_mallocfree.c.\n\nIf that doesn't help, please report this bug to: www.valgrind.org\n\nIn the bug report, send all the above text, the valgrind\nversion, and what OS and version you are using.  Thanks.\n",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "749": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "0.00",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==25074== Memcheck, a memory error detector\n==25074== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==25074== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==25074== Command: outputt1DUH6\n==25074==\n====START_TEST_3698====0.00====END_TEST_3698======25074==\n==25074== HEAP SUMMARY:\n==25074==     in use at exit: 0 bytes in 0 blocks\n==25074==   total heap usage: 1 allocs, 1 frees, 4,096 bytes allocated\n==25074==\n==25074== All heap blocks were freed -- no leaks are possible\n==25074==\n==25074== For counts of detected and suppressed errors, rerun with: -v\n==25074== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==25094== exp-sgcheck, a stack and global array overrun detector\n==25094== NOTE: This is an Experimental-Class Valgrind Tool\n==25094== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==25094== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==25094== Command: outputt1DUH6\n==25094==\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25094-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n\nexp-sgcheck: sg_main.c:559 (add_blocks_to_StackTree): Assertion '!already_present' failed.\n\nhost stacktrace:\n==25094==    at 0x5801545A: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25094==    by 0x58015574: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25094==    by 0x580156F9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25094==    by 0x5800A6E9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25094==    by 0x5800C3B0: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25094==    by 0x10032A7DBE: ???\n==25094==    by 0x1002E8DF2F: ???\n==25094==    by 0x1C0F: ???\n==25094==    by 0x10020644FF: ???\n==25094==    by 0x1002E8DF17: ???\n==25094==    by 0x1002E8DF2F: ???\n==25094==    by 0x5841F21F: ???\n==25094==    by 0x600: ???\n==25094==    by 0x18085: ???\n\nsched status:\n  running_tid=1\n\nThread 1: status = VgTs_Runnable (lwpid 25094)\n==25094==    at 0x4006EA2: _dl_map_object_from_fd (dl-map-segments.h:94)\n==25094==    by 0x40091AB: _dl_map_object (dl-load.c:2460)\n==25094==    by 0x4001304: map_doit (rtld.c:591)\n==25094==    by 0x401BE4A: _dl_catch_exception (dl-error-skeleton.c:196)\n==25094==    by 0x401BEBE: _dl_catch_error (dl-error-skeleton.c:215)\n==25094==    by 0x4002567: handle_ld_preload (rtld.c:762)\n==25094==    by 0x4003E54: dl_main (rtld.c:1618)\n==25094==    by 0x401AF4F: _dl_sysdep_start (dl-sysdep.c:253)\n==25094==    by 0x4002127: _dl_start (rtld.c:414)\n==25094==    by 0x4001097: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)\n\n\nNote: see also the FAQ in the source distribution.\nIt contains workarounds to several common problems.\nIn particular, if Valgrind aborted or crashed after\nidentifying problems in your program, there's a good chance\nthat fixing those problems will prevent Valgrind aborting or\ncrashing, especially if it happened in m_mallocfree.c.\n\nIf that doesn't help, please report this bug to: www.valgrind.org\n\nIn the bug report, send all the above text, the valgrind\nversion, and what OS and version you are using.  Thanks.\n",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "1584": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite temperature: Maksimalna temperatura: 11.1\nProsjecna temperatura: 10.0",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==25114== Memcheck, a memory error detector\n==25114== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==25114== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==25114== Command: outputBHts8r\n==25114==\nUnesite temperature: Maksimalna temperatura: 11.1\nProsjecna temperatura: 10.0==25114==\n==25114== HEAP SUMMARY:\n==25114==     in use at exit: 0 bytes in 0 blocks\n==25114==   total heap usage: 2 allocs, 2 frees, 8,192 bytes allocated\n==25114==\n==25114== All heap blocks were freed -- no leaks are possible\n==25114==\n==25114== For counts of detected and suppressed errors, rerun with: -v\n==25114== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==25132== exp-sgcheck, a stack and global array overrun detector\n==25132== NOTE: This is an Experimental-Class Valgrind Tool\n==25132== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==25132== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==25132== Command: outputBHts8r\n==25132==\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--25132-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n\nexp-sgcheck: sg_main.c:559 (add_blocks_to_StackTree): Assertion '!already_present' failed.\n\nhost stacktrace:\n==25132==    at 0x5801545A: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25132==    by 0x58015574: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25132==    by 0x580156F9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25132==    by 0x5800A6E9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25132==    by 0x5800C3B0: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==25132==    by 0x10032A7DBE: ???\n==25132==    by 0x1002E8DF2F: ???\n==25132==    by 0x1C0F: ???\n==25132==    by 0x10020644FF: ???\n==25132==    by 0x1002E8DF17: ???\n==25132==    by 0x1002E8DF2F: ???\n==25132==    by 0x5841F21F: ???\n==25132==    by 0x600: ???\n==25132==    by 0x18085: ???\n\nsched status:\n  running_tid=1\n\nThread 1: status = VgTs_Runnable (lwpid 25132)\n==25132==    at 0x4006EA2: _dl_map_object_from_fd (dl-map-segments.h:94)\n==25132==    by 0x40091AB: _dl_map_object (dl-load.c:2460)\n==25132==    by 0x4001304: map_doit (rtld.c:591)\n==25132==    by 0x401BE4A: _dl_catch_exception (dl-error-skeleton.c:196)\n==25132==    by 0x401BEBE: _dl_catch_error (dl-error-skeleton.c:215)\n==25132==    by 0x4002567: handle_ld_preload (rtld.c:762)\n==25132==    by 0x4003E54: dl_main (rtld.c:1618)\n==25132==    by 0x401AF4F: _dl_sysdep_start (dl-sysdep.c:253)\n==25132==    by 0x4002127: _dl_start (rtld.c:414)\n==25132==    by 0x4001097: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)\n\n\nNote: see also the FAQ in the source distribution.\nIt contains workarounds to several common problems.\nIn particular, if Valgrind aborted or crashed after\nidentifying problems in your program, there's a good chance\nthat fixing those problems will prevent Valgrind aborting or\ncrashing, especially if it happened in m_mallocfree.c.\n\nIf that doesn't help, please report this bug to: www.valgrind.org\n\nIn the bug report, send all the above text, the valgrind\nversion, and what OS and version you are using.  Thanks.\n",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1661201710
+}

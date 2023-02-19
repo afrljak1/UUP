@@ -1,0 +1,268 @@
+{
+    "buildhost_description": {
+        "id": "localhost",
+        "os": "Linux 4.15.0-171-generic x86_64\nUbuntu 18.04.6 LTS\n"
+    },
+    "tools": {
+        "compile": "7.5.0",
+        "compile[debug]": "7.5.0",
+        "debug": "8.1.1",
+        "profile[memcheck]": "valgrind-3.13.0",
+        "profile[sgcheck]": "valgrind-3.13.0"
+    },
+    "status": 4,
+    "test_results": {
+        "1748": {
+            "success": false,
+            "status": 8,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "main.c: In function ‘main’:\nmain.c:40:32: error: invalid initializer\n             struct Vrijeme v = proteklo(v1, v2);\n                                ^~~~~~~~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "32",
+                            "message": "invalid initializer",
+                            "code": "struct Vrijeme v = proteklo(v1, v2);"
+                        }
+                    ]
+                },
+                "execute": {
+                    "output": "timeout: failed to run command 'outputZwLiVi': Permission denied\n",
+                    "duration": 0,
+                    "status": 8,
+                    "exit_code": 126,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "valgrind: outputZwLiVi: Permission denied",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "valgrind: outputZwLiVi: Permission denied",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "1749": {
+            "success": false,
+            "status": 8,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "main.c: In function ‘main’:\nmain.c:40:32: error: invalid initializer\n             struct Vrijeme v = proteklo(v2, v1);\n                                ^~~~~~~~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "32",
+                            "message": "invalid initializer",
+                            "code": "struct Vrijeme v = proteklo(v2, v1);"
+                        }
+                    ]
+                },
+                "execute": {
+                    "output": "timeout: failed to run command 'outputvXIrs7': Permission denied\n",
+                    "duration": 0,
+                    "status": 8,
+                    "exit_code": 126,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "valgrind: outputvXIrs7: Permission denied",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "valgrind: outputvXIrs7: Permission denied",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "1750": {
+            "success": false,
+            "status": 8,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "main.c: In function ‘main’:\nmain.c:39:32: error: invalid initializer\n             struct Vrijeme v = proteklo(v2, v2);\n                                ^~~~~~~~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 5,
+                            "col": "32",
+                            "message": "invalid initializer",
+                            "code": "struct Vrijeme v = proteklo(v2, v2);"
+                        }
+                    ]
+                },
+                "execute": {
+                    "output": "timeout: failed to run command 'output5iHY6V': Permission denied\n",
+                    "duration": 0,
+                    "status": 8,
+                    "exit_code": 126,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "valgrind: output5iHY6V: Permission denied",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "valgrind: output5iHY6V: Permission denied",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "1751": {
+            "success": false,
+            "status": 8,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "main.c: In function ‘main’:\nmain.c:40:32: error: invalid initializer\n             struct Vrijeme v = proteklo(v1, v2);\n                                ^~~~~~~~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "32",
+                            "message": "invalid initializer",
+                            "code": "struct Vrijeme v = proteklo(v1, v2);"
+                        }
+                    ]
+                },
+                "execute": {
+                    "output": "timeout: failed to run command 'output3AHCSK': Permission denied\n",
+                    "duration": 0,
+                    "status": 8,
+                    "exit_code": 126,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "valgrind: output3AHCSK: Permission denied",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "valgrind: output3AHCSK: Permission denied",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "1752": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite prvo vrijeme (h m s): \nUnesite drugo vrijeme (h m s): \nIzmedju dva vremena je proteklo 24724 sekundi.",
+                    "duration": 0,
+                    "status": 6,
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==29700== Memcheck, a memory error detector\n==29700== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==29700== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==29700== Command: outputByrtLz\n==29700==\n====START_TEST_8973====Unesite prvo vrijeme (h m s):\nUnesite drugo vrijeme (h m s):\nIzmedju dva vremena je proteklo 24724 sekundi.\n====END_TEST_8973======29700==\n==29700== HEAP SUMMARY:\n==29700==     in use at exit: 0 bytes in 0 blocks\n==29700==   total heap usage: 2 allocs, 2 frees, 8,192 bytes allocated\n==29700==\n==29700== All heap blocks were freed -- no leaks are possible\n==29700==\n==29700== For counts of detected and suppressed errors, rerun with: -v\n==29700== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==29723== exp-sgcheck, a stack and global array overrun detector\n==29723== NOTE: This is an Experimental-Class Valgrind Tool\n==29723== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==29723== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==29723== Command: outputByrtLz\n==29723==\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--29723-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n\nexp-sgcheck: sg_main.c:559 (add_blocks_to_StackTree): Assertion '!already_present' failed.\n\nhost stacktrace:\n==29723==    at 0x5801545A: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==29723==    by 0x58015574: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==29723==    by 0x580156F9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==29723==    by 0x5800A6E9: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==29723==    by 0x5800C3B0: ??? (in /usr/lib/valgrind/exp-sgcheck-amd64-linux)\n==29723==    by 0x10032A7DBE: ???\n==29723==    by 0x1002E8DF2F: ???\n==29723==    by 0x1C0F: ???\n==29723==    by 0x10020644FF: ???\n==29723==    by 0x1002E8DF17: ???\n==29723==    by 0x1002E8DF2F: ???\n==29723==    by 0x5841F21F: ???\n==29723==    by 0x600: ???\n==29723==    by 0x18085: ???\n\nsched status:\n  running_tid=1\n\nThread 1: status = VgTs_Runnable (lwpid 29723)\n==29723==    at 0x4006EA2: _dl_map_object_from_fd (dl-map-segments.h:94)\n==29723==    by 0x40091AB: _dl_map_object (dl-load.c:2460)\n==29723==    by 0x4001304: map_doit (rtld.c:591)\n==29723==    by 0x401BE4A: _dl_catch_exception (dl-error-skeleton.c:196)\n==29723==    by 0x401BEBE: _dl_catch_error (dl-error-skeleton.c:215)\n==29723==    by 0x4002567: handle_ld_preload (rtld.c:762)\n==29723==    by 0x4003E54: dl_main (rtld.c:1618)\n==29723==    by 0x401AF4F: _dl_sysdep_start (dl-sysdep.c:253)\n==29723==    by 0x4002127: _dl_start (rtld.c:414)\n==29723==    by 0x4001097: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)\n\n\nNote: see also the FAQ in the source distribution.\nIt contains workarounds to several common problems.\nIn particular, if Valgrind aborted or crashed after\nidentifying problems in your program, there's a good chance\nthat fixing those problems will prevent Valgrind aborting or\ncrashing, especially if it happened in m_mallocfree.c.\n\nIf that doesn't help, please report this bug to: www.valgrind.org\n\nIn the bug report, send all the above text, the valgrind\nversion, and what OS and version you are using.  Thanks.\n",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1661695916
+}

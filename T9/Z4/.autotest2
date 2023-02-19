@@ -1,0 +1,114 @@
+{
+    "id": 7165,
+    "name": "Osnove ra\u010dunarstva (2018\/2019), Tutorijal 9, Zadatak 4",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1322,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf(\"%c\\n\", max_slovo(\"Ovo je probni primjer.\"));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "O"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1323,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf(\"%c\\n\", max_slovo(\"bBbAAAaBA\"));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "A"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1324,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/* Ne znamo sta treba raditi ako je string prazan, ali ne treba da se krahira *\/\nmax_slovo(\"\");\nmax_slovo(\"   \");\nmax_slovo(\".,;'!@#$\");\nprintf(\"%c\", max_slovo(\"x\"));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "X"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

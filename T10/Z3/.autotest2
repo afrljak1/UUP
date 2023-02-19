@@ -1,0 +1,171 @@
+{
+    "id": 7044,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 10, zadatak 4",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 920,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[] = \"   toliko o tome\";\nprintf(\"%s\", izbaci_rijec(testni_string, 1));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "    o tome"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 921,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[] = \"  toliko     o   tome  \";\nprintf(\"%s\", izbaci_rijec(testni_string, 3));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "  toliko     o     "
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 922,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[] = \"1abc!@#$%DEF![\/]!gHe+`_^*iJK.{|},lmn!   opQ!\";\nprintf(\"%s\", izbaci_rijec(testni_string, 5));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1abc!@#$%DEF![\/]!gHe+`_^*iJK.{|},!   opQ!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 923,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[] = \"u zenicu auto-stopom kada podjem ja\";\nprintf(\"%s\", izbaci_rijec(testni_string, 4));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "u zenicu auto- kada podjem ja"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 924,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[] = \"ovo je proba\";\nprintf(\"%s\\n\", izbaci_rijec(testni_string, 0));\nprintf(\"%s\\n\", izbaci_rijec(testni_string, 4));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "ovo je proba\novo je proba"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1718,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[] = \"  toliko     o   tome  da\";\nprintf(\"%s\", izbaci_rijec(testni_string, 3));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "  toliko     o     da"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

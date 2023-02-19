@@ -1,0 +1,233 @@
+{
+    "id": 7002,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 6, zadatak 3",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1170,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5 3 8 -1\n2 3 1 5 1 -1"
+                },
+                "expect": [
+                    "Unesite elemente niza A: Unesite elemente niza B: Niz C glasi: 5,3,8,2,3,1,5,1"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5 3 8 -1\n2 3 1 5 1 -1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5 3 8 -1\n2 3 1 5 1 -1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1466,
+            "execute": {
+                "environment": {
+                    "stdin": "5 6 -1 7 8 9 10 11 12 13 14 15 16 17 18"
+                },
+                "expect": [
+                    "Unesite elemente niza A: Unesite elemente niza B: Niz C glasi: 5,6,7,8,9,10,11,12,13,14,15,16"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5 6 -1 7 8 9 10 11 12 13 14 15 16 17 18"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5 6 -1 7 8 9 10 11 12 13 14 15 16 17 18"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1467,
+            "execute": {
+                "environment": {
+                    "stdin": "5 6 7 8 9 10 11 12 13 14 15 16 17 18 -1"
+                },
+                "expect": [
+                    "Unesite elemente niza A: Unesite elemente niza B: Niz C glasi: 5,6,7,8,9,10,11,12,13,14,15,16,17,18"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5 6 7 8 9 10 11 12 13 14 15 16 17 18 -1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5 6 7 8 9 10 11 12 13 14 15 16 17 18 -1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1468,
+            "execute": {
+                "environment": {
+                    "stdin": "-1 7 8 9 10 11 12 13 14 15 16 17 18"
+                },
+                "expect": [
+                    "Unesite elemente niza A: Unesite elemente niza B: Niz C glasi: 7,8,9,10,11,12,13,14,15,16"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "-1 7 8 9 10 11 12 13 14 15 16 17 18"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "-1 7 8 9 10 11 12 13 14 15 16 17 18"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1469,
+            "execute": {
+                "environment": {
+                    "stdin": "5 6 7 8 9 10 11 12 13 14 -1 15 16"
+                },
+                "expect": [
+                    "Unesite elemente niza A: Unesite elemente niza B: Niz C glasi: 5,6,7,8,9,10,11,12,13,14"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5 6 7 8 9 10 11 12 13 14 -1 15 16"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5 6 7 8 9 10 11 12 13 14 -1 15 16"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1470,
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 -1 -1"
+                },
+                "expect": [
+                    "Unesite elemente niza A: Unesite elemente niza B: Niz C glasi: 1,2,3"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 -1 -1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 -1 -1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1471,
+            "execute": {
+                "environment": {
+                    "stdin": "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30"
+                },
+                "expect": [
+                    "Unesite elemente niza A: Unesite elemente niza B: Niz C glasi: 5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

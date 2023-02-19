@@ -1,0 +1,228 @@
+{
+    "id": 7046,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 10, zadatak 6",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1702,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char kod[] = \"int main() {\\n\\tprintf(\\\"Hello world\\\"); \/* Pozdrav *\/\\n\\treturn 0;\\n}\";\nprintf(\"%s\", ukloni_komentare(kod));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "int main() {\n\tprintf(\"Hello world\"); \n\treturn 0;\n}"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1703,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char kod[] = \"abcde\/*komentar u c stilu*\/fgh\/*ovaj komentar nije zatvoren!\";\nprintf(\"%s\", ukloni_komentare(kod));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "abcdefgh\/*ovaj komentar nije zatvoren!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1704,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char kod[] = \"\/*Komentar na \\n   samom pocetku*\/test\/*U C komentarima\\nse mogu\\nnalaziti i novi\\nredovi*\/tri\/*jos jedan na kraju*\/\";\nprintf(\"%s\", ukloni_komentare(kod));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "testtri"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1705,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char kod[] = \"aa*\/****\/*\/**\/*\/*\/*\/bb\";\nprintf(\"%s\", ukloni_komentare(kod));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "aa***bb"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1706,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char kod[] = \"\/*Cijeli string je komentar*\/\";\nprintf(\"'%s'\", ukloni_komentare(kod));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "''"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1707,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char kod[] = \"   abc \/\/testiramo komentare u C++ stilu\\n   def\/\/drugi komentar\";\nprintf(\"%s\", ukloni_komentare(kod));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "   abc \n   def"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1708,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char kod[] = \"\/\/\/\/\/ Cijeli string je komentar u C++ stilu\";\nprintf(\"'%s'\", ukloni_komentare(kod));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "''"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1709,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char kod[] = \"\/*Cijeli string je komentar*\/\/\/u C ili C++ stilu\";\nprintf(\"'%s'\", ukloni_komentare(kod));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "''"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1710,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char kod[] = \"abc\/* U C komentaru \/\/ je C++ komentar*\/def\/\/U C++ komentaru \/* je C komentar\\nghi*\/j\/\/Sada necemo zatvoriti \/* C komentar\\njkl\";\nprintf(\"%s\", ukloni_komentare(kod));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "abcdef\nghi*\/j\njkl"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

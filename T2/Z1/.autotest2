@@ -1,0 +1,163 @@
+{
+    "id": 4104,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 2, zadatak 1",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 4105,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "110"
+                },
+                "expect": [
+                    "Unesite vrijednost sistolickog pritiska: Sistolicki pritisak je normalan!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4106,
+            "execute": {
+                "environment": {
+                    "stdin": "20"
+                },
+                "expect": [
+                    "Unesite vrijednost sistolickog pritiska: Sistolicki pritisak nije normalan!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4107,
+            "execute": {
+                "environment": {
+                    "stdin": "70"
+                },
+                "expect": [
+                    "Unesite vrijednost sistolickog pritiska: Sistolicki pritisak nije normalan!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4108,
+            "execute": {
+                "environment": {
+                    "stdin": "90"
+                },
+                "expect": [
+                    "Unesite vrijednost sistolickog pritiska: Sistolicki pritisak je normalan!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4109,
+            "execute": {
+                "environment": {
+                    "stdin": "89.999"
+                },
+                "expect": [
+                    "Unesite vrijednost sistolickog pritiska: Sistolicki pritisak nije normalan!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4110,
+            "execute": {
+                "environment": {
+                    "stdin": "120.01"
+                },
+                "expect": [
+                    "Unesite vrijednost sistolickog pritiska: Sistolicki pritisak nije normalan!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4111,
+            "execute": {
+                "environment": {
+                    "stdin": "120"
+                },
+                "expect": [
+                    "Unesite vrijednost sistolickog pritiska: Sistolicki pritisak je normalan!"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,152 @@
+{
+    "id": 7034,
+    "name": "Osnove ra\u010dunarstva (2015\/2016), Tutorijal 9, zadatak 5",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 809,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char recenica[200] = \"Danas    je    lijep    i     suncan    dan.    \";\nprintf(\"Broj rijeci u recenici je: %d\\n\",prva_rijec(recenica));\nprintf(\"%s\", recenica);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Broj rijeci u recenici je: 6\nDanas"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 810,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char recenica[200] = \"Popokatepetl\";\nprintf(\"Broj rijeci u recenici je: %d\\n\",prva_rijec(recenica));\nprintf(\"%s\", recenica);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Broj rijeci u recenici je: 1\nPopokatepetl"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 811,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char recenica[200] = \"I jogurt ujutru godi\";\nprintf(\"Broj rijeci u recenici je: %d\\n\",prva_rijec(recenica));\nprintf(\"%s\", recenica);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Broj rijeci u recenici je: 4\nI"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 812,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/recenica pocinje s razmakom, i ima dodatnih razmaka izmedju rijeci\nchar recenica[200] = \"    I     jogurt.   ujutru     godi.    \";\nprintf(\"Broj rijeci u recenici je: %d\\n\",prva_rijec(recenica));\nprintf(\"%s\", recenica);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Broj rijeci u recenici je: 4\n    I"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 813,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "   char recenica[100] = \"da li radi\";\n   printf(\"%d\",prva_rijec(recenica));\n   printf(\"\\n%s\",recenica);\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "3\nda"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

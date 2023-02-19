@@ -1,0 +1,174 @@
+{
+    "id": 7008,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 7, zadatak 2",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 721,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "int a = faktorijel(0);\nprintf (\"%d\",a);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 722,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "int a = faktorijel(1);\nprintf (\"%d\",a);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 723,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "int i;\nfor(i = 1; i < 11; i++)\nprintf (\"Faktorijel od %d je %d\\n\", i, faktorijel(i));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Faktorijel od 1 je 1\nFaktorijel od 2 je 2\nFaktorijel od 3 je 6\nFaktorijel od 4 je 24\nFaktorijel od 5 je 120\nFaktorijel od 6 je 720\nFaktorijel od 7 je 5040\nFaktorijel od 8 je 40320\nFaktorijel od 9 je 362880\nFaktorijel od 10 je 3628800"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 724,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf (\"-\\n\");\n_main();\nprintf (\"\\n-\");",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\n2.45"
+                },
+                "expect": [
+                    "-\nUnesite broj n u intervalu [1, 12]: Unesite realan broj x: Suma od 1 do 1 za x = 2.450 je 2.450\n-"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\n2.45"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\n2.45"
+                }
+            }
+        },
+        {
+            "id": 725,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf(\"-\\n\");\n_main();\nprintf(\"\\n-\");",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5\n2.45"
+                },
+                "expect": [
+                    "-\nUnesite broj n u intervalu [1, 12]: Unesite realan broj x: Suma od 1 do 5 za x = 2.450 je 4.206\n-"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5\n2.45"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5\n2.45"
+                }
+            }
+        }
+    ]
+}

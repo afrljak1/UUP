@@ -1,0 +1,196 @@
+{
+    "id": 7030,
+    "name": "Osnove ra\u010dunarstva (2015\/2016), Tutorijal 9, zadatak 1",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 825,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "aaaaa&&bbbbb^^ccc\n&"
+                },
+                "expect": [
+                    "Unesite jednu rijec do 80 znakova (ENTER za kraj):  \n\nKoji znak treba prebrojati:  \n\nBroj znakova & je: 2"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "aaaaa&&bbbbb^^ccc\n&"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "aaaaa&&bbbbb^^ccc\n&"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 826,
+            "execute": {
+                "environment": {
+                    "stdin": "broj zadatka 1, tutorijal 9\na"
+                },
+                "expect": [
+                    "Unesite jednu rijec do 80 znakova (ENTER za kraj):  \n\nKoji znak treba prebrojati:  \n\nBroj znakova a je: 4"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "broj zadatka 1, tutorijal 9\na"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "broj zadatka 1, tutorijal 9\na"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 827,
+            "execute": {
+                "environment": {
+                    "stdin": "abcccddz\nd"
+                },
+                "expect": [
+                    "Unesite jednu rijec do 80 znakova (ENTER za kraj):  \n\nKoji znak treba prebrojati:  \n\nBroj znakova d je: 2\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "abcccddz\nd"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "abcccddz\nd"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 828,
+            "execute": {
+                "environment": {
+                    "stdin": "_\n_"
+                },
+                "expect": [
+                    "Unesite jednu rijec do 80 znakova (ENTER za kraj):  \n\nKoji znak treba prebrojati:  \n\nBroj znakova _ je: 1\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "_\n_"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "_\n_"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1603,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char a[80] = \"\";\nprintf(\"%d\", prebroji(a, 'a'));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1604,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char a[80] = \"aaaaaa\";\nprintf(\"%d\", prebroji(a, 'A'));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

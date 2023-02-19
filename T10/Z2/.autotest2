@@ -1,0 +1,133 @@
+{
+    "id": 7043,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 10, zadatak 3",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 914,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[] = \"Moje ime je medvjedic Lino\";\nprintf(\"%s\", rot13(testni_string));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Zbwr vzr wr zrqiwrqvp Yvab"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 915,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[] = \"123123\";\nprintf(\"%s\", rot13(testni_string));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "123123"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 916,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[] = \"123123 danas je lijep i maglovit dan\";\nprintf(\"%s\\n\", rot13(testni_string));\nprintf(\"%s\", rot13(testni_string));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "123123 qnanf wr yvwrc v zntybivg qna\n123123 danas je lijep i maglovit dan"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1698,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[100] = \"\";\nprintf(\"'%s'\", rot13(testni_string));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "''"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

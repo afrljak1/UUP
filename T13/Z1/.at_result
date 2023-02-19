@@ -1,0 +1,146 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c28",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23)",
+        "compile[debug]": "gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23)",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "1": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Izlazna datoteka ispit_sortiran.txt je kreirana\nispit_sortiran.txt:\nAnic                Ana             7\nMarkovic            Marko          14\nIvic                Ivica          20\nMajic               Maja           12\nIsovic              Ismet           5\nMuharemovic         Muharem         7\nAlmirovic           Almir          10\nZdravkovic          Zdravko         8\nRadic               Rade           19\nDanilovic           Danilo         12",
+                    "duration": 0,
+                    "status": 6,
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==6685== Memcheck, a memory error detector\n==6685== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==6685== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==6685== Command: output56VRYC\n==6685==\n====START_TEST_2960====Izlazna datoteka ispit_sortiran.txt je kreirana\nispit_sortiran.txt:\nAnic                Ana             7\nMarkovic            Marko          14\nIvic                Ivica          20\nMajic               Maja           12\nIsovic              Ismet           5\nMuharemovic         Muharem         7\nAlmirovic           Almir          10\nZdravkovic          Zdravko         8\nRadic               Rade           19\nDanilovic           Danilo         12\n====END_TEST_2960======6685==\n==6685== HEAP SUMMARY:\n==6685==     in use at exit: 0 bytes in 0 blocks\n==6685==   total heap usage: 3 allocs, 3 frees, 1,704 bytes allocated\n==6685==\n==6685== All heap blocks were freed -- no leaks are possible\n==6685==\n==6685== For counts of detected and suppressed errors, rerun with: -v\n==6685== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==6689== exp-sgcheck, a stack and global array overrun detector\n==6689== NOTE: This is an Experimental-Class Valgrind Tool\n==6689== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==6689== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==6689== Command: output56VRYC\n==6689==\n====START_TEST_2960====Izlazna datoteka ispit_sortiran.txt je kreirana\nispit_sortiran.txt:\nAnic                Ana             7\nMarkovic            Marko          14\nIvic                Ivica          20\nMajic               Maja           12\nIsovic              Ismet           5\nMuharemovic         Muharem         7\nAlmirovic           Almir          10\nZdravkovic          Zdravko         8\nRadic               Rade           19\nDanilovic           Danilo         12\n====END_TEST_2960======6689==\n==6689== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "2": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Izlazna datoteka ispit_sortiran.txt je kreirana\nispit_sortiran.txt:\nMedo                Brundo          7\nMujo                Mujic          10\nNikola              Tesla          20\nMasa                Masic          13\nAlbert              Ajnstajn       19",
+                    "duration": 0,
+                    "status": 6,
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==6705== Memcheck, a memory error detector\n==6705== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==6705== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==6705== Command: outpute57Zn9\n==6705==\n====START_TEST_9617====Izlazna datoteka ispit_sortiran.txt je kreirana\nispit_sortiran.txt:\nMedo                Brundo          7\nMujo                Mujic          10\nNikola              Tesla          20\nMasa                Masic          13\nAlbert              Ajnstajn       19\n====END_TEST_9617======6705==\n==6705== HEAP SUMMARY:\n==6705==     in use at exit: 0 bytes in 0 blocks\n==6705==   total heap usage: 4 allocs, 4 frees, 2,272 bytes allocated\n==6705==\n==6705== All heap blocks were freed -- no leaks are possible\n==6705==\n==6705== For counts of detected and suppressed errors, rerun with: -v\n==6705== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==6709== exp-sgcheck, a stack and global array overrun detector\n==6709== NOTE: This is an Experimental-Class Valgrind Tool\n==6709== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==6709== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==6709== Command: outpute57Zn9\n==6709==\n====START_TEST_9617====Izlazna datoteka ispit_sortiran.txt je kreirana\nispit_sortiran.txt:\nMedo                Brundo          7\nMujo                Mujic          10\nNikola              Tesla          20\nMasa                Masic          13\nAlbert              Ajnstajn       19\n====END_TEST_9617======6709==\n==6709== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Greska pri otvaranju datoteke ispit.txt",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==6725== Memcheck, a memory error detector\n==6725== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==6725== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==6725== Command: outputhbtLPK\n==6725==\n====START_TEST_86====Greska pri otvaranju datoteke ispit.txt====END_TEST_86======6725==\n==6725== HEAP SUMMARY:\n==6725==     in use at exit: 0 bytes in 0 blocks\n==6725==   total heap usage: 1 allocs, 1 frees, 568 bytes allocated\n==6725==\n==6725== All heap blocks were freed -- no leaks are possible\n==6725==\n==6725== For counts of detected and suppressed errors, rerun with: -v\n==6725== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==6729== exp-sgcheck, a stack and global array overrun detector\n==6729== NOTE: This is an Experimental-Class Valgrind Tool\n==6729== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==6729== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==6729== Command: outputhbtLPK\n==6729==\n====START_TEST_86====Greska pri otvaranju datoteke ispit.txt====END_TEST_86======6729==\n==6729== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1642421144
+}

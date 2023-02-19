@@ -1,0 +1,153 @@
+{
+    "id": 4115,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 3, zadatak 2",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1170,
+            "patch": [
+                {
+                    "position": "above_main",
+                    "code": "#define while nije_dozvoljeno_koristiti_while"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "50 50 50"
+                },
+                "expect": [
+                    "Unesite broj: Unesite broj: Unesite broj: Suma je: 150"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "50 50 50"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "50 50 50"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1171,
+            "patch": [
+                {
+                    "position": "above_main",
+                    "code": "#define while nije_dozvoljeno_koristiti_while"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "20 20 20 20 21"
+                },
+                "expect": [
+                    "Unesite broj: Unesite broj: Unesite broj: Unesite broj: Unesite broj: Suma je: 101"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "20 20 20 20 21"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "20 20 20 20 21"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1172,
+            "patch": [
+                {
+                    "position": "above_main",
+                    "code": "#define while nije_dozvoljeno_koristiti_while"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "20 20 20 20 10 10 10"
+                },
+                "expect": [
+                    "Unesite broj: Unesite broj: Unesite broj: Unesite broj: Unesite broj: Unesite broj: Unesite broj: Suma je: 110"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "20 20 20 20 10 10 10"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "20 20 20 20 10 10 10"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

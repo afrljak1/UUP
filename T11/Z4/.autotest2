@@ -1,0 +1,184 @@
+{
+    "id": 7159,
+    "name": "Osnove ra\u010dunarstva (2015\/2016), Tutorijal 11, zadatak 4",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1742,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 15 30\n2 30 15\n"
+                },
+                "expect": [
+                    "Unesite prvo vrijeme (h m s): \nUnesite drugo vrijeme (h m s): \nIzmedju dva vremena je proteklo 4485 sekundi."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 15 30\n2 30 15\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 15 30\n2 30 15\n"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1743,
+            "execute": {
+                "environment": {
+                    "stdin": "2 30 15\n1 15 30\n"
+                },
+                "expect": [
+                    "Unesite prvo vrijeme (h m s): \nUnesite drugo vrijeme (h m s): \nIzmedju dva vremena je proteklo 4485 sekundi."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2 30 15\n1 15 30\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2 30 15\n1 15 30\n"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1744,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: funkcija 'proteklo' treba vracati \"unsigned int\"\nstruct Vrijeme v1 = {10, 10, 10};\nstruct Vrijeme v2 = {11, 11, 11};\nprintf (\"Proteklo: %u\", proteklo(v1, v2));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Proteklo: 3661"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1745,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "        {\/\/AT4\n            struct Vrijeme v1 = {1, 1, 1};\n            struct Vrijeme v2 = {1, 1, 1};\n            printf (\"Proteklo: %u\", proteklo(v1, v2));\n        }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Proteklo: 0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1746,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "        {\/\/AT5: cijeli dan\n            struct Vrijeme v1 = {0, 0, 0};\n            struct Vrijeme v2 = {23, 59, 59};\n            printf (\"Proteklo: %u\", proteklo(v1, v2));\n        }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Proteklo: 86399"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1747,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "        {\/\/AT6: cijeli dan (v1 i v2 zamijenjeni pri pozivu)\n            struct Vrijeme v1 = {0, 0, 0};\n            struct Vrijeme v2 = {23, 59, 59};\n            printf (\"Proteklo: %u\", proteklo(v2, v1));\n        }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Proteklo: 86399"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

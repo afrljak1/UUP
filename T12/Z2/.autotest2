@@ -1,0 +1,209 @@
+{
+    "id": 7200,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 12, zadatak 2",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 993,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "build_up();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void build_up()\n{\n    FILE* izlaz;\n\n    izlaz = fopen(\"test.txt\", \"w\");\n    fprintf(izlaz, \"Kubu je otkrio Kolumbo 1492. god., a od 1511. god. zemlju pocinju osvajati\\nSpanjolci istrebljujuci indijske domoroce. Vec 1523. god. poceli su\\ndovoditi crnce-robove iz Afrike koji su ubrzo postali vecinsko stanovnistvo.\");\n    fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "expect": [
+                    "Broj redova: 3\nBroj rijeci: 32\nBroj znakova: 188\nBroj samoglasnika: 70\nBroj velikih slova: 5\nBroj cifara: 12\n"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 994,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "build_up();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void build_up()\n{\n    FILE* izlaz;\n\n    izlaz = fopen(\"test.txt\", \"w\");\n    fprintf(izlaz, \"Welcome my son, welcome to the machine.\\nWhere have you been?\\nIt's alright we know where you've been.\\nYou've been in the pipeline, filling in time,\\nProvided with toys and 'Scouting for Boys'.\\nYou brought a guitar to punish your ma,\\nAnd you didn't like school, and you\\nKnow you're nobody's fool,\\nSo welcome to the machine.\");\n    fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "expect": [
+                    "Broj redova: 9\nBroj rijeci: 57\nBroj znakova: 264\nBroj samoglasnika: 101\nBroj velikih slova: 11\nBroj cifara: 0"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 995,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "build_up();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void build_up()\n{\n    FILE* izlaz;\n\n    izlaz = fopen(\"test.txt\", \"w\");\n    fprintf(izlaz, \"Joe: You see, I understand you men were just playin' around, but the mule, he just doesn't get it. Course, if you were to all apologize...\\n[Men Laugh]\\nJoe: I don't think it's nice, you laughin'. You see, my mule don't like people laughing. He gets the crazy idea you're laughin' at him. Now if you apologize, like I know you're going to, I might convince him that you really didn't mean it.\");\n    fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "expect": [
+                    "Broj redova: 3\nBroj rijeci: 73\nBroj znakova: 318\nBroj samoglasnika: 126\nBroj velikih slova: 13\nBroj cifara: 0"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 996,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "build_up();\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void build_up()\n{\n    FILE* izlaz;\n\n    izlaz = fopen(\"test.txt\", \"w\");\n    fprintf(izlaz, \"99 little bugs in the code\\n99 little bugs in the code\\nTake one down, patch it around\\n117 little bugs in the code\");\n    fclose(izlaz);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "expect": [
+                    "Broj redova: 4\nBroj rijeci: 24\nBroj znakova: 89\nBroj samoglasnika: 31\nBroj velikih slova: 1\nBroj cifara: 7\n"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "test.txt\n"
+                },
+                "matching": "whitespace"
+            }
+        }
+    ]
+}

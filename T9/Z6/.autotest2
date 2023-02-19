@@ -1,0 +1,171 @@
+{
+    "id": 7035,
+    "name": "Osnove ra\u010dunarstva (2015\/2016), Tutorijal 9, zadatak 6",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 792,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char s1[10] = \"aaaa\";\nchar s2[10] = \"bbbb\";\nprintf(\"%d \",  uporedi(s1, s2));\nprintf(\"%d \",  uporedi(s2, s1));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "-1 1 "
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 793,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char s1[10] = \"ijkl\";\nchar s2[10] = \"iiii\";\nprintf(\"%d\",  uporedi(s1, s2));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 794,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char s1[10] = \"aaa\";\nchar s2[10] = \"aaa\";\nprintf(\"%d\",  uporedi(s1, s2));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 795,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char s1[10] = \"aaa\";\nchar s2[10] = \"aaaa\";\nprintf(\"%d\",  uporedi(s1, s2));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "-1"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1613,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char s1[10] = \"eef\";\nchar s2[10] = \"eeee\";\nprintf(\"%d\",  uporedi(s1, s2));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1614,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char s1[10] = \"\";\nchar s2[10] = \"a\";\nprintf(\"%d\",  uporedi(s1, s2));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "-1"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

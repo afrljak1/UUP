@@ -1,0 +1,196 @@
+{
+    "id": 7018,
+    "name": "Osnove ra\u010dunarstva (2015\/2016), Tutorial 8, zadatak 3",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 751,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10 10 11 14.1 18 20 16 12 11 14 13.9"
+                },
+                "expect": [
+                    "Unesite broj mjerenja: Unesite temperature: Maksimalna temperatura: 20.0\nProsjecna temperatura: 14.0"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "10 10 11 14.1 18 20 16 12 11 14 13.9"
+                },
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "10 10 11 14.1 18 20 16 12 11 14 13.9"
+                },
+                "matching": "whitespace"
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 752,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "float niz[8] = { 1.23, 3.12, 0.0, -5.3, 10.7, 9, 8.9, 8 };\nfloat temp = maxtemp(niz, 8);\nprintf(\"%.2f\", temp);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "10.70"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 753,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "float niz[8] = { 1.23, 3.12, 0.0, -5.3, 10.7, 9, 8.9, 8 };\nfloat prosjek = prtemp(niz, 8);\nprintf(\"%.2f\", prosjek);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "4.46"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 754,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "float niz[8] = { 0, 0, 0.0, 0, 0, 0, 0, 0 };\nfloat prosjek = prtemp(niz, 8);\nfloat max = maxtemp(niz, 8);\nprintf(\"%.2f %.2f\", prosjek, max);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0.00 0.00"
+                ],
+                "matching": "whitespace"
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "matching": "whitespace"
+            },
+            "profile[sgcheck]": {
+                "matching": "whitespace"
+            }
+        },
+        {
+            "id": 1542,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "float niz[8] = { 0, 0, 0.0, 0, 0, 0, 0, 0 };\nprtemp(niz, 0);\nmaxtemp(niz, 0);\nprintf(\"OK\");",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1548,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "float niz[10000];\nint i;\nniz[0] = 0;\nfor (i=1; i<10000; i++)\n   niz[i] = niz[i-1] + 0.01;\nprintf(\"%.2f %.2f\", maxtemp(niz,10000), prtemp(niz, 10000));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "99.99 49.99"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

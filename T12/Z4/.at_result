@@ -1,0 +1,353 @@
+{
+    "buildhost_description": {
+        "id": "localhost",
+        "os": "Linux 4.15.0-171-generic x86_64\nUbuntu 18.04.6 LTS\n"
+    },
+    "tools": {
+        "compile": "7.5.0",
+        "compile[debug]": "7.5.0",
+        "debug": "8.1.1",
+        "profile[memcheck]": "valgrind-3.13.0",
+        "profile[sgcheck]": "valgrind-3.13.0"
+    },
+    "status": 4,
+    "test_results": {
+        "1030": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!",
+                    "duration": 0,
+                    "status": 6,
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 3,
+                    "duration": 0,
+                    "output": "==15036== Memcheck, a memory error detector\n==15036== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==15036== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==15036== Command: outputJZAhMP\n==15036==\n==15036== Conditional jump or move depends on uninitialised value(s)\n==15036==    at 0x108930: _main (main.c:23)\n==15036==    by 0x108D4E: main (main.c:77)\n==15036==\n==15036== Conditional jump or move depends on uninitialised value(s)\n==15036==    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n==15036==    by 0x4EA2EE5: printf (printf.c:33)\n==15036==    by 0x108A27: _main (main.c:41)\n==15036==    by 0x108D4E: main (main.c:77)\n==15036==\n==15036== Use of uninitialised value of size 8\n==15036==    at 0x4E9683B: _itoa_word (_itoa.c:179)\n==15036==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15036==    by 0x4EA2EE5: printf (printf.c:33)\n==15036==    by 0x108A27: _main (main.c:41)\n==15036==    by 0x108D4E: main (main.c:77)\n==15036==\n==15036== Conditional jump or move depends on uninitialised value(s)\n==15036==    at 0x4E96845: _itoa_word (_itoa.c:179)\n==15036==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15036==    by 0x4EA2EE5: printf (printf.c:33)\n==15036==    by 0x108A27: _main (main.c:41)\n==15036==    by 0x108D4E: main (main.c:77)\n==15036==\n==15036== Conditional jump or move depends on uninitialised value(s)\n==15036==    at 0x4E99FE4: vfprintf (vfprintf.c:1642)\n==15036==    by 0x4EA2EE5: printf (printf.c:33)\n==15036==    by 0x108A27: _main (main.c:41)\n==15036==    by 0x108D4E: main (main.c:77)\n==15036==\n==15036== Conditional jump or move depends on uninitialised value(s)\n==15036==    at 0x4E9AB1C: vfprintf (vfprintf.c:1642)\n==15036==    by 0x4EA2EE5: printf (printf.c:33)\n==15036==    by 0x108A27: _main (main.c:41)\n==15036==    by 0x108D4E: main (main.c:77)\n==15036==\n====START_TEST_577====Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!====END_TEST_577======15036==\n==15036== HEAP SUMMARY:\n==15036==     in use at exit: 0 bytes in 0 blocks\n==15036==   total heap usage: 8 allocs, 8 frees, 22,136 bytes allocated\n==15036==\n==15036== All heap blocks were freed -- no leaks are possible\n==15036==\n==15036== For counts of detected and suppressed errors, rerun with: -v\n==15036== Use --track-origins=yes to see where uninitialised values come from\n==15036== ERROR SUMMARY: 21 errors from 6 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x108930: _main (main.c:23)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 23
+                        },
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n    by 0x4EA2EE5: printf (printf.c:33)\n    by 0x108A27: _main (main.c:41)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 41
+                        }
+                    ]
+                }
+            }
+        },
+        "1031": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!",
+                    "duration": 0,
+                    "status": 6,
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 3,
+                    "duration": 0,
+                    "output": "==15071== Memcheck, a memory error detector\n==15071== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==15071== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==15071== Command: outputpQc2WU\n==15071==\n==15071== Conditional jump or move depends on uninitialised value(s)\n==15071==    at 0x108930: _main (main.c:23)\n==15071==    by 0x108D4E: main (main.c:77)\n==15071==\n==15071== Conditional jump or move depends on uninitialised value(s)\n==15071==    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n==15071==    by 0x4EA2EE5: printf (printf.c:33)\n==15071==    by 0x108A27: _main (main.c:41)\n==15071==    by 0x108D4E: main (main.c:77)\n==15071==\n==15071== Use of uninitialised value of size 8\n==15071==    at 0x4E9683B: _itoa_word (_itoa.c:179)\n==15071==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15071==    by 0x4EA2EE5: printf (printf.c:33)\n==15071==    by 0x108A27: _main (main.c:41)\n==15071==    by 0x108D4E: main (main.c:77)\n==15071==\n==15071== Conditional jump or move depends on uninitialised value(s)\n==15071==    at 0x4E96845: _itoa_word (_itoa.c:179)\n==15071==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15071==    by 0x4EA2EE5: printf (printf.c:33)\n==15071==    by 0x108A27: _main (main.c:41)\n==15071==    by 0x108D4E: main (main.c:77)\n==15071==\n==15071== Conditional jump or move depends on uninitialised value(s)\n==15071==    at 0x4E99FE4: vfprintf (vfprintf.c:1642)\n==15071==    by 0x4EA2EE5: printf (printf.c:33)\n==15071==    by 0x108A27: _main (main.c:41)\n==15071==    by 0x108D4E: main (main.c:77)\n==15071==\n==15071== Conditional jump or move depends on uninitialised value(s)\n==15071==    at 0x4E9AB1C: vfprintf (vfprintf.c:1642)\n==15071==    by 0x4EA2EE5: printf (printf.c:33)\n==15071==    by 0x108A27: _main (main.c:41)\n==15071==    by 0x108D4E: main (main.c:77)\n==15071==\n====START_TEST_7202====Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!====END_TEST_7202======15071==\n==15071== HEAP SUMMARY:\n==15071==     in use at exit: 0 bytes in 0 blocks\n==15071==   total heap usage: 8 allocs, 8 frees, 22,136 bytes allocated\n==15071==\n==15071== All heap blocks were freed -- no leaks are possible\n==15071==\n==15071== For counts of detected and suppressed errors, rerun with: -v\n==15071== Use --track-origins=yes to see where uninitialised values come from\n==15071== ERROR SUMMARY: 21 errors from 6 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x108930: _main (main.c:23)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 23
+                        },
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n    by 0x4EA2EE5: printf (printf.c:33)\n    by 0x108A27: _main (main.c:41)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 41
+                        }
+                    ]
+                }
+            }
+        },
+        "1032": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!",
+                    "duration": 0,
+                    "status": 6,
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 3,
+                    "duration": 1,
+                    "output": "==15109== Memcheck, a memory error detector\n==15109== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==15109== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==15109== Command: outputLiSI41\n==15109==\n==15109== Conditional jump or move depends on uninitialised value(s)\n==15109==    at 0x108930: _main (main.c:23)\n==15109==    by 0x108D4E: main (main.c:77)\n==15109==\n==15109== Conditional jump or move depends on uninitialised value(s)\n==15109==    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n==15109==    by 0x4EA2EE5: printf (printf.c:33)\n==15109==    by 0x108A27: _main (main.c:41)\n==15109==    by 0x108D4E: main (main.c:77)\n==15109==\n==15109== Use of uninitialised value of size 8\n==15109==    at 0x4E9683B: _itoa_word (_itoa.c:179)\n==15109==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15109==    by 0x4EA2EE5: printf (printf.c:33)\n==15109==    by 0x108A27: _main (main.c:41)\n==15109==    by 0x108D4E: main (main.c:77)\n==15109==\n==15109== Conditional jump or move depends on uninitialised value(s)\n==15109==    at 0x4E96845: _itoa_word (_itoa.c:179)\n==15109==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15109==    by 0x4EA2EE5: printf (printf.c:33)\n==15109==    by 0x108A27: _main (main.c:41)\n==15109==    by 0x108D4E: main (main.c:77)\n==15109==\n==15109== Conditional jump or move depends on uninitialised value(s)\n==15109==    at 0x4E99FE4: vfprintf (vfprintf.c:1642)\n==15109==    by 0x4EA2EE5: printf (printf.c:33)\n==15109==    by 0x108A27: _main (main.c:41)\n==15109==    by 0x108D4E: main (main.c:77)\n==15109==\n==15109== Conditional jump or move depends on uninitialised value(s)\n==15109==    at 0x4E9AB1C: vfprintf (vfprintf.c:1642)\n==15109==    by 0x4EA2EE5: printf (printf.c:33)\n==15109==    by 0x108A27: _main (main.c:41)\n==15109==    by 0x108D4E: main (main.c:77)\n==15109==\n====START_TEST_3667====Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!====END_TEST_3667======15109==\n==15109== HEAP SUMMARY:\n==15109==     in use at exit: 0 bytes in 0 blocks\n==15109==   total heap usage: 8 allocs, 8 frees, 22,136 bytes allocated\n==15109==\n==15109== All heap blocks were freed -- no leaks are possible\n==15109==\n==15109== For counts of detected and suppressed errors, rerun with: -v\n==15109== Use --track-origins=yes to see where uninitialised values come from\n==15109== ERROR SUMMARY: 21 errors from 6 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x108930: _main (main.c:23)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 23
+                        },
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n    by 0x4EA2EE5: printf (printf.c:33)\n    by 0x108A27: _main (main.c:41)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 41
+                        }
+                    ]
+                }
+            }
+        },
+        "1033": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!",
+                    "duration": 0,
+                    "status": 6,
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 3,
+                    "duration": 1,
+                    "output": "==15190== Memcheck, a memory error detector\n==15190== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==15190== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==15190== Command: outputplJ6bb\n==15190==\n==15190== Conditional jump or move depends on uninitialised value(s)\n==15190==    at 0x108930: _main (main.c:23)\n==15190==    by 0x108D4E: main (main.c:77)\n==15190==\n==15190== Conditional jump or move depends on uninitialised value(s)\n==15190==    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n==15190==    by 0x4EA2EE5: printf (printf.c:33)\n==15190==    by 0x108A27: _main (main.c:41)\n==15190==    by 0x108D4E: main (main.c:77)\n==15190==\n==15190== Use of uninitialised value of size 8\n==15190==    at 0x4E9683B: _itoa_word (_itoa.c:179)\n==15190==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15190==    by 0x4EA2EE5: printf (printf.c:33)\n==15190==    by 0x108A27: _main (main.c:41)\n==15190==    by 0x108D4E: main (main.c:77)\n==15190==\n==15190== Conditional jump or move depends on uninitialised value(s)\n==15190==    at 0x4E96845: _itoa_word (_itoa.c:179)\n==15190==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15190==    by 0x4EA2EE5: printf (printf.c:33)\n==15190==    by 0x108A27: _main (main.c:41)\n==15190==    by 0x108D4E: main (main.c:77)\n==15190==\n==15190== Conditional jump or move depends on uninitialised value(s)\n==15190==    at 0x4E99FE4: vfprintf (vfprintf.c:1642)\n==15190==    by 0x4EA2EE5: printf (printf.c:33)\n==15190==    by 0x108A27: _main (main.c:41)\n==15190==    by 0x108D4E: main (main.c:77)\n==15190==\n==15190== Conditional jump or move depends on uninitialised value(s)\n==15190==    at 0x4E9AB1C: vfprintf (vfprintf.c:1642)\n==15190==    by 0x4EA2EE5: printf (printf.c:33)\n==15190==    by 0x108A27: _main (main.c:41)\n==15190==    by 0x108D4E: main (main.c:77)\n==15190==\n====START_TEST_2169====Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!====END_TEST_2169======15190==\n==15190== HEAP SUMMARY:\n==15190==     in use at exit: 0 bytes in 0 blocks\n==15190==   total heap usage: 8 allocs, 8 frees, 22,136 bytes allocated\n==15190==\n==15190== All heap blocks were freed -- no leaks are possible\n==15190==\n==15190== For counts of detected and suppressed errors, rerun with: -v\n==15190== Use --track-origins=yes to see where uninitialised values come from\n==15190== ERROR SUMMARY: 21 errors from 6 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x108930: _main (main.c:23)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 23
+                        },
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n    by 0x4EA2EE5: printf (printf.c:33)\n    by 0x108A27: _main (main.c:41)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 41
+                        }
+                    ]
+                }
+            }
+        },
+        "1034": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!",
+                    "duration": 0,
+                    "status": 6,
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 3,
+                    "duration": 1,
+                    "output": "==15227== Memcheck, a memory error detector\n==15227== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==15227== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==15227== Command: outputHO45im\n==15227==\n==15227== Conditional jump or move depends on uninitialised value(s)\n==15227==    at 0x108930: _main (main.c:23)\n==15227==    by 0x108D4E: main (main.c:77)\n==15227==\n==15227== Conditional jump or move depends on uninitialised value(s)\n==15227==    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n==15227==    by 0x4EA2EE5: printf (printf.c:33)\n==15227==    by 0x108A27: _main (main.c:41)\n==15227==    by 0x108D4E: main (main.c:77)\n==15227==\n==15227== Use of uninitialised value of size 8\n==15227==    at 0x4E9683B: _itoa_word (_itoa.c:179)\n==15227==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15227==    by 0x4EA2EE5: printf (printf.c:33)\n==15227==    by 0x108A27: _main (main.c:41)\n==15227==    by 0x108D4E: main (main.c:77)\n==15227==\n==15227== Conditional jump or move depends on uninitialised value(s)\n==15227==    at 0x4E96845: _itoa_word (_itoa.c:179)\n==15227==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15227==    by 0x4EA2EE5: printf (printf.c:33)\n==15227==    by 0x108A27: _main (main.c:41)\n==15227==    by 0x108D4E: main (main.c:77)\n==15227==\n==15227== Conditional jump or move depends on uninitialised value(s)\n==15227==    at 0x4E99FE4: vfprintf (vfprintf.c:1642)\n==15227==    by 0x4EA2EE5: printf (printf.c:33)\n==15227==    by 0x108A27: _main (main.c:41)\n==15227==    by 0x108D4E: main (main.c:77)\n==15227==\n==15227== Conditional jump or move depends on uninitialised value(s)\n==15227==    at 0x4E9AB1C: vfprintf (vfprintf.c:1642)\n==15227==    by 0x4EA2EE5: printf (printf.c:33)\n==15227==    by 0x108A27: _main (main.c:41)\n==15227==    by 0x108D4E: main (main.c:77)\n==15227==\n====START_TEST_4891====Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!====END_TEST_4891======15227==\n==15227== HEAP SUMMARY:\n==15227==     in use at exit: 0 bytes in 0 blocks\n==15227==   total heap usage: 8 allocs, 8 frees, 22,136 bytes allocated\n==15227==\n==15227== All heap blocks were freed -- no leaks are possible\n==15227==\n==15227== For counts of detected and suppressed errors, rerun with: -v\n==15227== Use --track-origins=yes to see where uninitialised values come from\n==15227== ERROR SUMMARY: 21 errors from 6 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x108930: _main (main.c:23)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 23
+                        },
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n    by 0x4EA2EE5: printf (printf.c:33)\n    by 0x108A27: _main (main.c:41)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 41
+                        }
+                    ]
+                }
+            }
+        },
+        "1035": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!",
+                    "duration": 0,
+                    "status": 6,
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 3,
+                    "duration": 1,
+                    "output": "==15279== Memcheck, a memory error detector\n==15279== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==15279== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==15279== Command: outputvS8bqz\n==15279==\n==15279== Conditional jump or move depends on uninitialised value(s)\n==15279==    at 0x108930: _main (main.c:23)\n==15279==    by 0x108D4E: main (main.c:77)\n==15279==\n==15279== Conditional jump or move depends on uninitialised value(s)\n==15279==    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n==15279==    by 0x4EA2EE5: printf (printf.c:33)\n==15279==    by 0x108A27: _main (main.c:41)\n==15279==    by 0x108D4E: main (main.c:77)\n==15279==\n==15279== Use of uninitialised value of size 8\n==15279==    at 0x4E9683B: _itoa_word (_itoa.c:179)\n==15279==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15279==    by 0x4EA2EE5: printf (printf.c:33)\n==15279==    by 0x108A27: _main (main.c:41)\n==15279==    by 0x108D4E: main (main.c:77)\n==15279==\n==15279== Conditional jump or move depends on uninitialised value(s)\n==15279==    at 0x4E96845: _itoa_word (_itoa.c:179)\n==15279==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15279==    by 0x4EA2EE5: printf (printf.c:33)\n==15279==    by 0x108A27: _main (main.c:41)\n==15279==    by 0x108D4E: main (main.c:77)\n==15279==\n==15279== Conditional jump or move depends on uninitialised value(s)\n==15279==    at 0x4E99FE4: vfprintf (vfprintf.c:1642)\n==15279==    by 0x4EA2EE5: printf (printf.c:33)\n==15279==    by 0x108A27: _main (main.c:41)\n==15279==    by 0x108D4E: main (main.c:77)\n==15279==\n==15279== Conditional jump or move depends on uninitialised value(s)\n==15279==    at 0x4E9AB1C: vfprintf (vfprintf.c:1642)\n==15279==    by 0x4EA2EE5: printf (printf.c:33)\n==15279==    by 0x108A27: _main (main.c:41)\n==15279==    by 0x108D4E: main (main.c:77)\n==15279==\n====START_TEST_1507====Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!====END_TEST_1507======15279==\n==15279== HEAP SUMMARY:\n==15279==     in use at exit: 0 bytes in 0 blocks\n==15279==   total heap usage: 8 allocs, 8 frees, 22,136 bytes allocated\n==15279==\n==15279== All heap blocks were freed -- no leaks are possible\n==15279==\n==15279== For counts of detected and suppressed errors, rerun with: -v\n==15279== Use --track-origins=yes to see where uninitialised values come from\n==15279== ERROR SUMMARY: 21 errors from 6 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x108930: _main (main.c:23)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 23
+                        },
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n    by 0x4EA2EE5: printf (printf.c:33)\n    by 0x108A27: _main (main.c:41)\n    by 0x108D4E: main (main.c:77)\n",
+                            "file": "main.c",
+                            "line": 41
+                        }
+                    ]
+                }
+            }
+        },
+        "1036": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!",
+                    "duration": 0,
+                    "status": 6,
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 3,
+                    "duration": 0,
+                    "output": "==15349== Memcheck, a memory error detector\n==15349== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==15349== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info\n==15349== Command: outputdOajwO\n==15349==\n==15349== Conditional jump or move depends on uninitialised value(s)\n==15349==    at 0x108930: _main (main.c:23)\n==15349==    by 0x108D6E: main (main.c:78)\n==15349==\n==15349== Conditional jump or move depends on uninitialised value(s)\n==15349==    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n==15349==    by 0x4EA2EE5: printf (printf.c:33)\n==15349==    by 0x108A27: _main (main.c:41)\n==15349==    by 0x108D6E: main (main.c:78)\n==15349==\n==15349== Use of uninitialised value of size 8\n==15349==    at 0x4E9683B: _itoa_word (_itoa.c:179)\n==15349==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15349==    by 0x4EA2EE5: printf (printf.c:33)\n==15349==    by 0x108A27: _main (main.c:41)\n==15349==    by 0x108D6E: main (main.c:78)\n==15349==\n==15349== Conditional jump or move depends on uninitialised value(s)\n==15349==    at 0x4E96845: _itoa_word (_itoa.c:179)\n==15349==    by 0x4E99EDD: vfprintf (vfprintf.c:1642)\n==15349==    by 0x4EA2EE5: printf (printf.c:33)\n==15349==    by 0x108A27: _main (main.c:41)\n==15349==    by 0x108D6E: main (main.c:78)\n==15349==\n==15349== Conditional jump or move depends on uninitialised value(s)\n==15349==    at 0x4E99FE4: vfprintf (vfprintf.c:1642)\n==15349==    by 0x4EA2EE5: printf (printf.c:33)\n==15349==    by 0x108A27: _main (main.c:41)\n==15349==    by 0x108D6E: main (main.c:78)\n==15349==\n==15349== Conditional jump or move depends on uninitialised value(s)\n==15349==    at 0x4E9AB1C: vfprintf (vfprintf.c:1642)\n==15349==    by 0x4EA2EE5: printf (printf.c:33)\n==15349==    by 0x108A27: _main (main.c:41)\n==15349==    by 0x108D6E: main (main.c:78)\n==15349==\n====START_TEST_8054====Unesite predmet: Zalimo, ali ne postoje podaci o predmetu sa brojem 10!====END_TEST_8054======15349==\n==15349== HEAP SUMMARY:\n==15349==     in use at exit: 0 bytes in 0 blocks\n==15349==   total heap usage: 8 allocs, 8 frees, 22,136 bytes allocated\n==15349==\n==15349== All heap blocks were freed -- no leaks are possible\n==15349==\n==15349== For counts of detected and suppressed errors, rerun with: -v\n==15349== Use --track-origins=yes to see where uninitialised values come from\n==15349== ERROR SUMMARY: 21 errors from 6 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x108930: _main (main.c:23)\n    by 0x108D6E: main (main.c:78)\n",
+                            "file": "main.c",
+                            "line": 23
+                        },
+                        {
+                            "type": 3,
+                            "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x4E9A8AA: vfprintf (vfprintf.c:1642)\n    by 0x4EA2EE5: printf (printf.c:33)\n    by 0x108A27: _main (main.c:41)\n    by 0x108D6E: main (main.c:78)\n",
+                            "file": "main.c",
+                            "line": 41
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "time": 1661704803
+}

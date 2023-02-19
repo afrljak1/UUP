@@ -1,0 +1,158 @@
+{
+    "id": 7001,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 6, zadatak 2",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1170,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1.2 8.3 4.111 -3 1.19 -1.19 3.1 98.7 0.1 5.3"
+                },
+                "expect": [
+                    "Unesite 1. realan broj: Unesite 2. realan broj: Unesite 3. realan broj: Unesite 4. realan broj: Unesite 5. realan broj: Unesite 6. realan broj: Unesite 7. realan broj: Unesite 8. realan broj: Unesite 9. realan broj: Unesite 10. realan broj: Sortiran niz:\n98.7 8.3 5.3 4.111 3.1 1.2 1.19 0.1 -1.19 -3"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1.2 8.3 4.111 -3 1.19 -1.19 3.1 98.7 0.1 5.3"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1.2 8.3 4.111 -3 1.19 -1.19 3.1 98.7 0.1 5.3"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1479,
+            "execute": {
+                "environment": {
+                    "stdin": "0 0 0 0 0 0 0 0 0 0"
+                },
+                "expect": [
+                    "Unesite 1. realan broj: Unesite 2. realan broj: Unesite 3. realan broj: Unesite 4. realan broj: Unesite 5. realan broj: Unesite 6. realan broj: Unesite 7. realan broj: Unesite 8. realan broj: Unesite 9. realan broj: Unesite 10. realan broj: Sortiran niz:\n0 0 0 0 0 0 0 0 0 0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "0 0 0 0 0 0 0 0 0 0"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "0 0 0 0 0 0 0 0 0 0"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1480,
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10"
+                },
+                "expect": [
+                    "Unesite 1. realan broj: Unesite 2. realan broj: Unesite 3. realan broj: Unesite 4. realan broj: Unesite 5. realan broj: Unesite 6. realan broj: Unesite 7. realan broj: Unesite 8. realan broj: Unesite 9. realan broj: Unesite 10. realan broj: Sortiran niz:\n10 9 8 7 6 5 4 3 2 1"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1481,
+            "execute": {
+                "environment": {
+                    "stdin": "10 9 8 7 6 5 4 3 2 1"
+                },
+                "expect": [
+                    "Unesite 1. realan broj: Unesite 2. realan broj: Unesite 3. realan broj: Unesite 4. realan broj: Unesite 5. realan broj: Unesite 6. realan broj: Unesite 7. realan broj: Unesite 8. realan broj: Unesite 9. realan broj: Unesite 10. realan broj: Sortiran niz:\n10 9 8 7 6 5 4 3 2 1"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "10 9 8 7 6 5 4 3 2 1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "10 9 8 7 6 5 4 3 2 1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

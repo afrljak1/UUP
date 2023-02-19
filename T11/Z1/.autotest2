@@ -1,0 +1,133 @@
+{
+    "id": 7156,
+    "name": "Osnove ra\u010dunarstva (2015\/2016), Tutorijal 11, zadatak 1",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 938,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "0,0\n4\n1,2.5\n"
+                },
+                "expect": [
+                    "Unesite kruznicu:\nUnesite centar kruznice:\nUnesite koordinate tacke (x, y): \nUnesite poluprecnik kruznice: \nUnesite neku tacku:\nUnesite koordinate tacke (x, y): \nTacka je unutar kruznice."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "0,0\n4\n1,2.5\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "0,0\n4\n1,2.5\n"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 939,
+            "execute": {
+                "environment": {
+                    "stdin": "5,5\n5\n-1,0\n"
+                },
+                "expect": [
+                    "Unesite kruznicu:\nUnesite centar kruznice:\nUnesite koordinate tacke (x, y): \nUnesite poluprecnik kruznice: \nUnesite neku tacku:\nUnesite koordinate tacke (x, y): \nTacka je izvan kruznice."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5,5\n5\n-1,0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5,5\n5\n-1,0\n"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 940,
+            "execute": {
+                "environment": {
+                    "stdin": "3,3\n3\n3,0\n"
+                },
+                "expect": [
+                    "Unesite kruznicu:\nUnesite centar kruznice:\nUnesite koordinate tacke (x, y): \nUnesite poluprecnik kruznice: \nUnesite neku tacku:\nUnesite koordinate tacke (x, y): \nTacka je na kruznici."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "3,3\n3\n3,0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "3,3\n3\n3,0\n"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

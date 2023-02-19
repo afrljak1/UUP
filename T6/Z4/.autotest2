@@ -1,0 +1,233 @@
+{
+    "id": 7003,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 6, zadatak 4",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1170,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2 3 1 5 1 -1\n1"
+                },
+                "expect": [
+                    "Unesite elemente niza: Unesite element koji treba izbaciti: Novi niz glasi: 2,3,5"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2 3 1 5 1 -1\n1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2 3 1 5 1 -1\n1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1464,
+            "execute": {
+                "environment": {
+                    "stdin": "1 1 1 1 -1\n1"
+                },
+                "expect": [
+                    "Unesite elemente niza: Unesite element koji treba izbaciti: Novi niz glasi:"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 1 1 1 -1\n1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 1 1 1 -1\n1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1465,
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 -1\n5"
+                },
+                "expect": [
+                    "Unesite elemente niza: Unesite element koji treba izbaciti: Novi niz glasi: 1,2,3"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 -1\n5"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 -1\n5"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1472,
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10 11 12"
+                },
+                "expect": [
+                    "Unesite elemente niza: Unesite element koji treba izbaciti: Novi niz glasi: 1,2,3,4,5,6,7,8,9,10"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10 11 12"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10 11 12"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1473,
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10 1"
+                },
+                "expect": [
+                    "Unesite elemente niza: Unesite element koji treba izbaciti: Novi niz glasi: 2,3,4,5,6,7,8,9,10"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10 1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10 1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1474,
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10 10"
+                },
+                "expect": [
+                    "Unesite elemente niza: Unesite element koji treba izbaciti: Novi niz glasi: 1,2,3,4,5,6,7,8,9"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10 10"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10 10"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1475,
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 1 -1\n1"
+                },
+                "expect": [
+                    "Unesite elemente niza: Unesite element koji treba izbaciti: Novi niz glasi: 2,3,4,5"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 1 -1\n1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 1 -1\n1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

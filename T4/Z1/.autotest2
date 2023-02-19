@@ -1,0 +1,158 @@
+{
+    "id": 4120,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 4, zadatak 1",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1170,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 3 1"
+                },
+                "expect": [
+                    " Unesite koeficijente kvadratne jednadzbe a,b,c:\n Rjesenja su: x1=-0.381966   x2=-2.618034"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 3 1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 3 1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1277,
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 1"
+                },
+                "expect": [
+                    " Unesite koeficijente kvadratne jednadzbe a,b,c:\n Rjesenja su: x1=x2=-1.000000"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 2 1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 2 1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1278,
+            "execute": {
+                "environment": {
+                    "stdin": "1 1 1"
+                },
+                "expect": [
+                    " Unesite koeficijente kvadratne jednadzbe a,b,c:\n Rjesenja su: x1 = (-0.500000,0.866025)\n x2 = (-0.500000,-0.866025)"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 1 1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 1 1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 876,
+            "execute": {
+                "environment": {
+                    "stdin": "1.53679 -2.36798 0.067892"
+                },
+                "expect": [
+                    " Unesite koeficijente kvadratne jednadzbe a,b,c:\n Rjesenja su: x1=1.511636   x2=0.029225"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1.53679 -2.36798 0.067892"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1.53679 -2.36798 0.067892"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

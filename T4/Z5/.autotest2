@@ -1,0 +1,233 @@
+{
+    "id": 687,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorial 4, zadatak 5",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 693,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "495257\n5"
+                },
+                "expect": [
+                    "Unesite broj: Unesite cifru: Nakon izbacivanja broj glasi 4927.\nBroj pomnozen sa dva glasi 9854.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "495257\n5"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "495257\n5"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 694,
+            "execute": {
+                "environment": {
+                    "stdin": "9999\n9"
+                },
+                "expect": [
+                    "Unesite broj: Unesite cifru: Nakon izbacivanja broj glasi 0.\nBroj pomnozen sa dva glasi 0."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "9999\n9"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "9999\n9"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 695,
+            "execute": {
+                "environment": {
+                    "stdin": "-5\n-1\n-2\n10\n-5\n0"
+                },
+                "expect": [
+                    "Unesite broj: Unesite broj: Unesite broj: Unesite broj: Unesite cifru: Unesite cifru: Nakon izbacivanja broj glasi 1.\nBroj pomnozen sa dva glasi 2.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "-5\n-1\n-2\n10\n-5\n0"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "-5\n-1\n-2\n10\n-5\n0"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 696,
+            "execute": {
+                "environment": {
+                    "stdin": "0\n1"
+                },
+                "expect": [
+                    "Unesite broj: Unesite cifru: Nakon izbacivanja broj glasi 0.\nBroj pomnozen sa dva glasi 0."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "0\n1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "0\n1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 697,
+            "execute": {
+                "environment": {
+                    "stdin": "987654321\n7"
+                },
+                "expect": [
+                    "Unesite broj: Unesite cifru: Nakon izbacivanja broj glasi 98654321.\nBroj pomnozen sa dva glasi 197308642."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "987654321\n7"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "987654321\n7"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 698,
+            "execute": {
+                "environment": {
+                    "stdin": "333337\n3"
+                },
+                "expect": [
+                    "Unesite broj: Unesite cifru: Nakon izbacivanja broj glasi 7.\nBroj pomnozen sa dva glasi 14."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "333337\n3"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "333337\n3"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 699,
+            "execute": {
+                "environment": {
+                    "stdin": "42222212\n2"
+                },
+                "expect": [
+                    "Unesite broj: Unesite cifru: Nakon izbacivanja broj glasi 41.\nBroj pomnozen sa dva glasi 82."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "42222212\n2"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "42222212\n2"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

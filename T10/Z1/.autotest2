@@ -1,0 +1,171 @@
+{
+    "id": 7041,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 10, zadatak 1",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 926,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[100] = \"1\";\nzamijeni1 (testni_string);\nprintf(\"'%s'\", testni_string);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'jedan'"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 927,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[100] = \"111\";\nzamijeni1 (testni_string);\nprintf(\"'%s'\", testni_string);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'jedanjedanjedan'"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 928,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[100] = \"ovo je 1 primjer 1121\";\nzamijeni1 (testni_string);\nprintf(\"'%s'\", testni_string);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'ovo je jedan primjer jedanjedan2jedan'"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1695,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char testni_string[100] = \"testnistringstringhehe\";\nzamijeni1 (testni_string);\nprintf(\"'%s'\", testni_string);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'testnistringstringhehe'"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1719,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char t[100] = \" 1 1 1 1 1 1 \";\nzamijeni1 (t);\nprintf(\"'%s'\", t);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "' jedan jedan jedan jedan jedan jedan '"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1720,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/* Tacno 11 znakova za \"jedan jedan\" + nul granicnik *\/\nchar t[12] = \"1 1\";\nzamijeni1 (t);\nprintf(\"'%s'\", t);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'jedan jedan'"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

@@ -1,0 +1,133 @@
+{
+    "id": 5793,
+    "name": "Uvod u programiranje (2020\/2021), Tutorijal 1, Zadatak 1",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5"
+                },
+                "expect": [
+                    "Unesite poluprecnik:\n Povrsina kruga sa poluprecnikom 5.00 je 78.50\n Zapremina kugle sa poluprecnikom 5.00 je 523.33\n Povrsina lopte sa poluprecnikom 5.00 je 314.00"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 2,
+            "execute": {
+                "environment": {
+                    "stdin": "1"
+                },
+                "expect": [
+                    "Unesite poluprecnik:\n Povrsina kruga sa poluprecnikom 1.00 je 3.14\n Zapremina kugle sa poluprecnikom 1.00 je 4.19\n Povrsina lopte sa poluprecnikom 1.00 je 12.56"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 3,
+            "execute": {
+                "environment": {
+                    "stdin": "0.3183"
+                },
+                "expect": [
+                    "Unesite poluprecnik:\n Povrsina kruga sa poluprecnikom 0.32 je 0.32\n Zapremina kugle sa poluprecnikom 0.32 je 0.14\n Povrsina lopte sa poluprecnikom 0.32 je 1.27"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "0.3183"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "0.3183"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,408 @@
+{
+    "id": 667,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 4, zadatak 4",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 668,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\n2015"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Januar 2015, broj dana: 31"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\n2015"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\n2015"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 669,
+            "execute": {
+                "environment": {
+                    "stdin": "2\n2003"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Februar 2003, broj dana: 28"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2\n2003"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2\n2003"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 670,
+            "execute": {
+                "environment": {
+                    "stdin": "2\n452"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Februar 452, broj dana: 29"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2\n452"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2\n452"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 671,
+            "execute": {
+                "environment": {
+                    "stdin": "3\n3986"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Mart 3986, broj dana: 31"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "3\n3986"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "3\n3986"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 672,
+            "execute": {
+                "environment": {
+                    "stdin": "4\n1"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: April 1, broj dana: 30"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "4\n1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "4\n1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 673,
+            "execute": {
+                "environment": {
+                    "stdin": "5\n712"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Maj 712, broj dana: 31"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5\n712"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5\n712"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 674,
+            "execute": {
+                "environment": {
+                    "stdin": "6\n13"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Juni 13, broj dana: 30"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "6\n13"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "6\n13"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 675,
+            "execute": {
+                "environment": {
+                    "stdin": "7\n693"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Juli 693, broj dana: 31"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "7\n693"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "7\n693"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 676,
+            "execute": {
+                "environment": {
+                    "stdin": "8\n6699"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Avgust 6699, broj dana: 31"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "8\n6699"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "8\n6699"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 677,
+            "execute": {
+                "environment": {
+                    "stdin": "9\n1021"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Septembar 1021, broj dana: 30"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "9\n1021"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "9\n1021"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 678,
+            "execute": {
+                "environment": {
+                    "stdin": "10\n333"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Oktobar 333, broj dana: 31"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "10\n333"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "10\n333"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 679,
+            "execute": {
+                "environment": {
+                    "stdin": "11\n2071"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Novembar 2071, broj dana: 30"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "11\n2071"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "11\n2071"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 680,
+            "execute": {
+                "environment": {
+                    "stdin": "12\n265"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Decembar 265, broj dana: 31"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "12\n265"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "12\n265"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1281,
+            "execute": {
+                "environment": {
+                    "stdin": "2\n2000"
+                },
+                "expect": [
+                    "Unesite mjesec: Unesite godinu: Februar 2000, broj dana: 29"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2\n2000"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2\n2000"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

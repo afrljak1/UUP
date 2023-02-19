@@ -1,0 +1,233 @@
+{
+    "id": 4117,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 3, zadatak 4",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1170,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5"
+                },
+                "expect": [
+                    "Unesite broj n: * * * * *\n * * * * *\n* * * * *\n * * * * *\n* * * * *"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1174,
+            "execute": {
+                "environment": {
+                    "stdin": "1"
+                },
+                "expect": [
+                    "Unesite broj n: *"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1175,
+            "execute": {
+                "environment": {
+                    "stdin": "2"
+                },
+                "expect": [
+                    "Unesite broj n: * *\n * *"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1176,
+            "execute": {
+                "environment": {
+                    "stdin": "3"
+                },
+                "expect": [
+                    "Unesite broj n: * * *\n * * *\n* * *"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "3"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "3"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1177,
+            "execute": {
+                "environment": {
+                    "stdin": "4"
+                },
+                "expect": [
+                    "Unesite broj n: * * * *\n * * * *\n* * * *\n * * * *"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "4"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "4"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1178,
+            "execute": {
+                "environment": {
+                    "stdin": "10"
+                },
+                "expect": [
+                    "Unesite broj n: * * * * * * * * * *\n * * * * * * * * * *\n* * * * * * * * * *\n * * * * * * * * * *\n* * * * * * * * * *\n * * * * * * * * * *\n* * * * * * * * * *\n * * * * * * * * * *\n* * * * * * * * * *\n * * * * * * * * * *"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "10"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "10"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1179,
+            "execute": {
+                "environment": {
+                    "stdin": "15"
+                },
+                "expect": [
+                    "Unesite broj n: * * * * * * * * * * * * * * *\n * * * * * * * * * * * * * * *\n* * * * * * * * * * * * * * *\n * * * * * * * * * * * * * * *\n* * * * * * * * * * * * * * *\n * * * * * * * * * * * * * * *\n* * * * * * * * * * * * * * *\n * * * * * * * * * * * * * * *\n* * * * * * * * * * * * * * *\n * * * * * * * * * * * * * * *\n* * * * * * * * * * * * * * *\n * * * * * * * * * * * * * * *\n* * * * * * * * * * * * * * *\n * * * * * * * * * * * * * * *\n* * * * * * * * * * * * * * *\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "15"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "15"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

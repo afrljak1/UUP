@@ -1,0 +1,133 @@
+{
+    "id": 890,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 5, zadatak 1",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 891,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10"
+                },
+                "expect": [
+                    "Unesite 1. cijeli broj: Unesite 2. cijeli broj: Unesite 3. cijeli broj: Unesite 4. cijeli broj: Unesite 5. cijeli broj: Unesite 6. cijeli broj: Unesite 7. cijeli broj: Unesite 8. cijeli broj: Unesite 9. cijeli broj: Unesite 10. cijeli broj: Srednja vrijednost unesenih brojeva je 5.50.\n\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 892,
+            "execute": {
+                "environment": {
+                    "stdin": "1 1 1 1 1 1 1 1 1 1"
+                },
+                "expect": [
+                    "Unesite 1. cijeli broj: Unesite 2. cijeli broj: Unesite 3. cijeli broj: Unesite 4. cijeli broj: Unesite 5. cijeli broj: Unesite 6. cijeli broj: Unesite 7. cijeli broj: Unesite 8. cijeli broj: Unesite 9. cijeli broj: Unesite 10. cijeli broj: Srednja vrijednost unesenih brojeva je 1.00.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 1 1 1 1 1 1 1 1 1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 1 1 1 1 1 1 1 1 1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 893,
+            "execute": {
+                "environment": {
+                    "stdin": "-10 -9 -8 -7 -6 -5 -4 -3 -2 -1"
+                },
+                "expect": [
+                    "Unesite 1. cijeli broj: Unesite 2. cijeli broj: Unesite 3. cijeli broj: Unesite 4. cijeli broj: Unesite 5. cijeli broj: Unesite 6. cijeli broj: Unesite 7. cijeli broj: Unesite 8. cijeli broj: Unesite 9. cijeli broj: Unesite 10. cijeli broj: Srednja vrijednost unesenih brojeva je -5.50."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "-10 -9 -8 -7 -6 -5 -4 -3 -2 -1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "-10 -9 -8 -7 -6 -5 -4 -3 -2 -1"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

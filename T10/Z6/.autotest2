@@ -1,0 +1,171 @@
+{
+    "id": 7046,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 10, zadatak 7",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1711,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char tekst[] = \"Za vrijeme promjena specifikacija moze doci do poremecaja tolerancije izlaznog proizvoda\";\nprintf(\"%s\", tritacke(tekst));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Za vrijeme promjena spe. moze doci do por. tol. izlaznog proizvoda"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1712,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char tekst[] = \"\";\nprintf(\"'%s'\", tritacke(tekst));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "''"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1713,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char tekst[] = \"abcdefghi\";\nprintf(\"%s\", tritacke(tekst));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "abcdefghi"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1714,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char tekst[] = \"abcdefghij\";\nprintf(\"%s\", tritacke(tekst));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "abc."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1715,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char tekst[] = \"abcdefghij abcdefghij abcdefghij\";\nprintf(\"%s\", tritacke(tekst));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "abc. abc. abc."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1716,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char tekst[] = \"   abcdefghij   abcdefghij   abcdefghij   \";\nprintf(\"%s\", tritacke(tekst));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "   abc.   abc.   abc.   "
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

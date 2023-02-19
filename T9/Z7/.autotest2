@@ -1,0 +1,114 @@
+{
+    "id": 7036,
+    "name": "Osnove ra\u010dunarstva (2015\/2016), Tutorijal 9, zadatak 7",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 797,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf(\"%d \", strcmpi(\"Sarajevo\", \"Sarajevo\", 0));\nprintf(\"%d\", strcmpi(\"Sarajevo\", \"Sarajevo\", 1));\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0 0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 798,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf(\"%d \", strcmpi(\"Sarajevo\", \"sarajevo\", 0));\nprintf(\"%d\", strcmpi(\"Sarajevo\", \"sarajevo\", 1));\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0 -1"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1612,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf(\"%d \", strcmpi(\"aaa\", \"Aaaa\", 0));\nprintf(\"%d\", strcmpi(\"aaa\", \"Aaaa\", 1));\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "-1 1"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

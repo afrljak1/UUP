@@ -1,0 +1,185 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c01",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23)",
+        "compile[debug]": "gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23)",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "4018": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Dan: Mjesec: Vas znak je Vodolija!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4019": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dan: Mjesec: Vas znak je Ribe!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4020": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dan: Mjesec: Vas znak je Blizanci!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4021": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dan: Mjesec: Vas znak je Lav!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4022": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dan: Mjesec: Vas znak je Djevica!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4023": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dan: Mjesec: Vas znak je Strijelac!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4024": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dan: Mjesec: Vas znak je Jarac!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4025": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dan: Mjesec: Vas znak je Strijelac!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4026": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dan: Mjesec: Vas znak je Jarac!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        },
+        "4027": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "execute": {
+                    "output": "Dan: Mjesec: Vas znak je Vodolija!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                }
+            }
+        }
+    },
+    "time": 1634725831
+}

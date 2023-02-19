@@ -1,0 +1,208 @@
+{
+    "id": 4093,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 2, zadatak 2",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 4094,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "97 145 75"
+                },
+                "expect": [
+                    "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: nije normalan\nPuls: normalan"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4095,
+            "execute": {
+                "environment": {
+                    "stdin": "100 70 70"
+                },
+                "expect": [
+                    "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: normalan\nPuls: normalan"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4096,
+            "execute": {
+                "environment": {
+                    "stdin": "105 65 65"
+                },
+                "expect": [
+                    "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: normalan\nPuls: normalan"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4097,
+            "execute": {
+                "environment": {
+                    "stdin": "120 80 100"
+                },
+                "expect": [
+                    "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: normalan\nPuls: normalan"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4098,
+            "execute": {
+                "environment": {
+                    "stdin": "89.99 59.999 54.9"
+                },
+                "expect": [
+                    "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: nije normalan\nDP: nije normalan\nPuls: nije normalan"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4099,
+            "execute": {
+                "environment": {
+                    "stdin": "120.01 80 101"
+                },
+                "expect": [
+                    "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: nije normalan\nDP: normalan\nPuls: nije normalan"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4100,
+            "execute": {
+                "environment": {
+                    "stdin": "91 80.01 54.99"
+                },
+                "expect": [
+                    "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: nije normalan\nPuls: nije normalan"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4101,
+            "execute": {
+                "environment": {
+                    "stdin": "119.99 60 54"
+                },
+                "expect": [
+                    "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: normalan\nDP: normalan\nPuls: nije normalan"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4102,
+            "execute": {
+                "environment": {
+                    "stdin": "80 30 77"
+                },
+                "expect": [
+                    "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: nije normalan\nDP: nije normalan\nPuls: normalan"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 4103,
+            "execute": {
+                "environment": {
+                    "stdin": "10 70 101"
+                },
+                "expect": [
+                    "Dobrodosli kod Vaseg kucnog ljekara!\nUnesite sistolicki, dijastolicki pritisak i puls: SP: nije normalan\nDP: normalan\nPuls: nije normalan"
+                ]
+            },
+            "debug": [],
+            "options": [
+                "reuse"
+            ]
+        }
+    ]
+}

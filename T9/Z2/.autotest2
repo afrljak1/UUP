@@ -1,0 +1,165 @@
+{
+    "id": 7032,
+    "name": "Osnove ra\u010dunarstva (2015\/2016), Tutorijal 9, zadatak 3",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 781,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Otorinolaringologija\no\n"
+                },
+                "expect": [
+                    "Unesite jednu rijec do 80 znakova (ENTER za kraj):  \n\nKoji znak treba prebrojati:   \nBroj znakova o je: 4\nBroj samoglasnika je: 10 "
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "Otorinolaringologija\no\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "Otorinolaringologija\no\n"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 782,
+            "execute": {
+                "environment": {
+                    "stdin": "Autoritativna samouprava\nu"
+                },
+                "expect": [
+                    "Unesite jednu rijec do 80 znakova (ENTER za kraj):  \n\nKoji znak treba prebrojati:  \nBroj znakova u je: 2\nBroj samoglasnika je: 12 "
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "Autoritativna samouprava\nu"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "Autoritativna samouprava\nu"
+                }
+            },
+            "options": [
+                "reuse"
+            ]
+        },
+        {
+            "id": 1605,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf(\"%d\", samoglasnici(\"Otorinolaringologija\"));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "10"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1606,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf(\"%d\", samoglasnici(\"\"));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1607,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "printf(\"%d\", samoglasnici(\"skrb prst Trst\"));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

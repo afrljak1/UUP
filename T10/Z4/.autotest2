@@ -1,0 +1,133 @@
+{
+    "id": 7045,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Tutorijal 10, zadatak 5",
+    "languages": [
+        "C"
+    ],
+    "tools": {
+        "compile": {
+            "require": "gcc",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic"
+            ]
+        },
+        "compile[debug]": {
+            "require": "gcc",
+            "features": [
+                "debug"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1699,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char tekst[] = \"Ovo je neki test\";\nprintf(\"'%s'\", whitespace(tekst));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'Ovo je neki test'"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1700,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char tekst[] = \"  \\t  Prva   recenica.  \\n \\t   Druga\\nrecenica\\t\\n\\t\";\nprintf(\"'%s'\", whitespace(tekst));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'Prva recenica. Druga recenica'"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1701,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char tekst[] = \" !\\\"#$%&'()*+,-.\/0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTVWXYZ[\\\\]^_`bfghlpqwxyz{|}~\";\nprintf (\"'%s'\", whitespace(tekst));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'!\"#$%&'()*+,-.\/0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTVWXYZ[\\]^_`bfghlpqwxyz{|}~'"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 1717,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "char tekst[] = \"    \\n   \\t     \\n\\t\\n   \\t\\n\\t   \";\nprintf(\"'%s'\", whitespace(tekst));",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "''"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}
